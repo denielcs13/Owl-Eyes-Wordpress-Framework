@@ -1,0 +1,486 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project: OE Framework
+Version: 0.1
+Last change: 03/30/14 
+-------------------------------------------------------------------*/
+/* Config */
+/* These functions define ranges for various things, like media queries */
+/* Calculate REM from interger or px */
+/* //= require functions (refered to as a sprocket, faster?)  */
+/* The following was adopted from the Foundation framework */
+/* line 17, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/*
+ * Variables
+ */
+/*
+ * Base styles
+ */
+/* line 31, ../scss/_typography.scss */
+body {
+  color: #333333;
+  font-size: 16px;
+  font-family: "Open Sans", Verdana, Helvetica, sans-serif;
+  font-weight: 300;
+  line-height: 25.6px;
+}
+
+/* apply a natural box layout model to all elements */
+/* line 40, ../scss/_typography.scss */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*
+ * Typography
+ *
+ *
+ * Credits:
+ * http://thesassway.com/advanced/modular-css-typography
+ * http://www.onextrapixel.com/2011/05/30/how-to-create-great-web-typography-in-10-minutes/
+ * http://coding.smashingmagazine.com/2011/03/14/technical-web-typography-guidelines-and-techniques/
+ */
+/* line 56, ../scss/_typography.scss */
+.link, .typeset a {
+  color: #d54aaf;
+  text-decoration: none;
+}
+/* line 60, ../scss/_typography.scss */
+.link:visited, .typeset a:visited {
+  color: purple;
+}
+/* line 64, ../scss/_typography.scss */
+.link:hover, .typeset a:hover, .link:visited:hover, .typeset a:visited:hover {
+  color: #eb34b9;
+  text-decoration: underline;
+}
+
+/* line 70, ../scss/_typography.scss */
+.fixed, .typeset pre, .typeset code {
+  font-family: "Andale Mono", AndaleMono, monospace;
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+/* line 72, ../scss/_typography.scss */
+.quiet {
+  font-color: #cccccc;
+}
+
+/* line 73, ../scss/_typography.scss */
+.loud, .bold, .typeset b, .typeset strong {
+  font-color: black;
+}
+
+/* line 75, ../scss/_typography.scss */
+.italic, .typeset i, .typeset em {
+  font-style: italic;
+}
+
+/* line 76, ../scss/_typography.scss */
+.bold, .typeset b, .typeset strong {
+  font-weight: 700;
+}
+
+/* line 78, ../scss/_typography.scss */
+.h1, .typeset h1, .h2, .typeset h2, .h3, .typeset h3, .h4, .typeset h4, .h5, .typeset h5, .h6, .typeset h6 {
+  font-family: "Open Sans", Verdana, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+/* line 81, ../scss/_typography.scss */
+.h1, .typeset h1 {
+  font-size: 61.55813px;
+  letter-spacing: -0.125rem;
+  line-height: 92.33719px;
+}
+
+/* line 82, ../scss/_typography.scss */
+.h2, .typeset h2 {
+  font-size: 46.12037px;
+  letter-spacing: -0.0625rem;
+  line-height: 69.18056px;
+}
+
+/* line 83, ../scss/_typography.scss */
+.h3, .typeset h3 {
+  font-size: 34.55415px;
+  line-height: 51.83122px;
+}
+
+/* line 84, ../scss/_typography.scss */
+.h4, .typeset h4 {
+  font-size: 28.50396px;
+  line-height: 42.75594px;
+}
+
+/* line 85, ../scss/_typography.scss */
+.h5, .typeset h5 {
+  font-size: 23.51311px;
+  line-height: 35.26967px;
+}
+
+/* line 86, ../scss/_typography.scss */
+.h6, .typeset h6 {
+  font-size: 19.39613px;
+  line-height: 29.09419px;
+}
+
+/* line 88, ../scss/_typography.scss */
+.block-margins, .typeset p, .typeset ul, .typeset ol, .typeset pre {
+  margin: 1em 0;
+}
+
+/* line 90, ../scss/_typography.scss */
+.unordered-list, .typeset ul {
+  list-style-type: disc;
+}
+
+/* line 91, ../scss/_typography.scss */
+.ordered-list, .typeset ol {
+  list-style: decimal;
+}
+
+/* line 103, ../scss/_typography.scss */
+.typeset h1 {
+  margin: 1.6rem 0 0.8rem;
+}
+/* line 104, ../scss/_typography.scss */
+.typeset h2 {
+  margin: 1.6rem 0 0.8rem;
+}
+/* line 105, ../scss/_typography.scss */
+.typeset h3 {
+  margin: 1.6rem 0 0.8rem;
+}
+/* line 106, ../scss/_typography.scss */
+.typeset h4 {
+  margin: 1.6rem 0 0.8rem;
+}
+/* line 107, ../scss/_typography.scss */
+.typeset h5 {
+  margin: 1.6rem 0 0.8rem;
+}
+/* line 108, ../scss/_typography.scss */
+.typeset h6 {
+  margin: 1.6rem 0 0.8rem;
+}
+/* line 114, ../scss/_typography.scss */
+.typeset ul ul {
+  margin: 0 0 0 25.6px;
+}
+/* line 120, ../scss/_typography.scss */
+.typeset ol ol {
+  margin: 0 0 0 25.6px;
+}
+/* line 127, ../scss/_typography.scss */
+.typeset blockquote {
+  /* TO DO: calculate this margin from .col-1 dynamically */
+  margin: 0 5.833%;
+  border-left: 5px solid #ccc;
+  padding-left: 10px;
+  text-indent: -0.4em;
+}
+/* line 135, ../scss/_typography.scss */
+.typeset blockquote b {
+  display: block;
+  text-indent: 0;
+}
+
+/*
+ * Modifiers
+ */
+/* line 147, ../scss/_typography.scss */
+.float-left {
+  float: left;
+  margin-right: 1em;
+}
+
+/* line 148, ../scss/_typography.scss */
+.float-right {
+  float: right;
+  margin-left: 1em;
+}
+
+/* line 150, ../scss/_typography.scss */
+.text-left {
+  text-align: left   !important;
+}
+
+/* line 151, ../scss/_typography.scss */
+.text-center {
+  text-align: center !important;
+}
+
+/* line 152, ../scss/_typography.scss */
+.text-right {
+  text-align: right  !important;
+}
+
+/*
+ * Object definitions
+ */
+/* line 159, ../scss/_typography.scss */
+.content {
+  margin: 0 auto;
+  width: 32em;
+}
+
+/* line 164, ../scss/_typography.scss */
+.header-block {
+  font-size: 110%;
+}
+/* line 167, ../scss/_typography.scss */
+.header-block.typography h1 {
+  font-size: 450%;
+  margin-top: 0 !important;
+}
+
+/* line 170, ../scss/_typography.scss */
+.author-block {
+  border-top: 3px double #cccccc;
+  margin-top: 4em;
+}
+
+/* line 6, ../scss/_grid.scss */
+.full {
+  width: 100%;
+  overflow: auto;
+}
+
+/* line 12, ../scss/_grid.scss */
+.container {
+  position: relative;
+  max-width: 1140px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+/* line 20, ../scss/_grid.scss */
+[class*="col-"] {
+  position: relative;
+  float: left;
+  overflow: auto;
+  width: 97.5%;
+  min-height: 1px;
+  margin: 1.25%;
+  /*
+  	min-height: 30px;
+  	color: #fff;
+  	background: #a9669a;
+  	[class*="col-"] {
+  		background: #cba7c3;
+  	}
+  */
+}
+/* line 28, ../scss/_grid.scss */
+[class*="col-"] [class*="col-"] {
+  margin: 1.25% 0;
+}
+
+@media only screen and (max-width: 1000px) {
+  /* line 46, ../scss/_grid.scss */
+  [class*="col-"] [class*="col-"] {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1005px) {
+  /* line 54, ../scss/_grid.scss */
+  [class*="col-"] [class*="col-"] {
+    margin: 0 1.25% 0;
+  }
+
+  /* line 64, ../scss/_grid.scss */
+  .col-1 {
+    width: 5.83333%;
+  }
+
+  /* line 69, ../scss/_grid.scss */
+  .collapse .col-1 {
+    width: 8.33333%;
+  }
+
+  /* line 64, ../scss/_grid.scss */
+  .col-2 {
+    width: 14.16667%;
+  }
+
+  /* line 69, ../scss/_grid.scss */
+  .collapse .col-2 {
+    width: 16.66667%;
+  }
+
+  /* line 64, ../scss/_grid.scss */
+  .col-3 {
+    width: 22.5%;
+  }
+
+  /* line 69, ../scss/_grid.scss */
+  .collapse .col-3 {
+    width: 25%;
+  }
+
+  /* line 64, ../scss/_grid.scss */
+  .col-4 {
+    width: 30.83333%;
+  }
+
+  /* line 69, ../scss/_grid.scss */
+  .collapse .col-4 {
+    width: 33.33333%;
+  }
+
+  /* line 64, ../scss/_grid.scss */
+  .col-5 {
+    width: 39.16667%;
+  }
+
+  /* line 69, ../scss/_grid.scss */
+  .collapse .col-5 {
+    width: 41.66667%;
+  }
+
+  /* line 64, ../scss/_grid.scss */
+  .col-6 {
+    width: 47.5%;
+  }
+
+  /* line 69, ../scss/_grid.scss */
+  .collapse .col-6 {
+    width: 50%;
+  }
+
+  /* line 64, ../scss/_grid.scss */
+  .col-7 {
+    width: 55.83333%;
+  }
+
+  /* line 69, ../scss/_grid.scss */
+  .collapse .col-7 {
+    width: 58.33333%;
+  }
+
+  /* line 64, ../scss/_grid.scss */
+  .col-8 {
+    width: 64.16667%;
+  }
+
+  /* line 69, ../scss/_grid.scss */
+  .collapse .col-8 {
+    width: 66.66667%;
+  }
+
+  /* line 64, ../scss/_grid.scss */
+  .col-9 {
+    width: 72.5%;
+  }
+
+  /* line 69, ../scss/_grid.scss */
+  .collapse .col-9 {
+    width: 75%;
+  }
+
+  /* line 64, ../scss/_grid.scss */
+  .col-10 {
+    width: 80.83333%;
+  }
+
+  /* line 69, ../scss/_grid.scss */
+  .collapse .col-10 {
+    width: 83.33333%;
+  }
+
+  /* line 64, ../scss/_grid.scss */
+  .col-11 {
+    width: 89.16667%;
+  }
+
+  /* line 69, ../scss/_grid.scss */
+  .collapse .col-11 {
+    width: 91.66667%;
+  }
+
+  /* line 64, ../scss/_grid.scss */
+  .col-12 {
+    width: 97.5%;
+  }
+
+  /* line 69, ../scss/_grid.scss */
+  .collapse .col-12 {
+    width: 100%;
+  }
+}
+/* line 23, ../scss/app.scss */
+[class*="col-"] {
+  min-height: 35px;
+  text-align: center;
+  color: #fff;
+  background: #A5D1E2;
+}

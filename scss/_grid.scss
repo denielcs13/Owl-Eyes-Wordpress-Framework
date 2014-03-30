@@ -1,0 +1,83 @@
+$columns: 12 !default;   	// number of columns
+$margin: 1.25 !default; 	// margin between columns
+$class-slug: col !default;  // name of class e.g. "col-1"
+
+// for full width layouts
+.full {
+	width: 100%;
+	overflow: auto;
+}
+
+// used for centered content
+.container {
+	position: relative;
+	max-width: $width;
+	margin: 0 auto;
+	overflow: auto;
+}
+
+// the base of our columns class
+[class*="#{$class-slug}-"] {
+	position: relative;
+	float: left;
+	overflow: auto;
+	width: 97.5%;
+	min-height: 1px;
+	margin: percentage($margin/100);
+	
+	[class*="col-"] {
+		margin: percentage($margin/100) 0;
+	}
+	
+	
+/*
+	min-height: 30px;
+	color: #fff;
+	background: #a9669a;
+	[class*="col-"] {
+		background: #cba7c3;
+	}
+*/
+}
+
+// at smaller widths nested columns should be 100% to fill their parent
+@media #{$medium-down} {
+	[class*="col-"] {
+		[class*="col-"] {
+			width: 100%;
+		}
+	}
+}
+
+@mixin calculate-grid() { 
+	[class*="col-"] {
+		[class*="col-"] {
+			margin: 0 percentage($margin/100) 0;
+		}
+	}
+
+	// lets iterate through each column and create a class for it
+	@for $i from 1 through $columns {
+		
+		$width: $i / ($columns/100%);
+		
+		.#{$class-slug}-#{$i} {
+			width: $width - percentage($margin/100) * 2
+		}
+		
+		.collapse {
+			.#{$class-slug}-#{$i} {
+				width: $width
+			}
+		}
+	}
+}
+
+// IE sucks as always so we won't include any media queries
+@if ($ie) {
+        @include calculate-grid;
+} @else {
+    @media #{$large-up} {
+        @include calculate-grid;
+    }
+}

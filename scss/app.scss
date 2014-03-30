@@ -1,0 +1,28 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project: OE Framework
+Version: 0.1
+Last change: 03/30/14 
+-------------------------------------------------------------------*/
+
+/* Config */
+$ie: false;
+
+@import "functions"; /* //= require functions (refered to as a sprocket, faster?)  */
+@import "settings";
+@import "compass";
+@include global-reset;
+
+// TODO: test golden ratio functions as well, but we'll use this for now
+@import "modular-scale";
+
+@import "typography";
+@import "grid";
+
+[class*="#{$class-slug}-"] {
+	min-height: 35px;
+	text-align: center;
+	color: #fff;
+	background: #A5D1E2;
+}
