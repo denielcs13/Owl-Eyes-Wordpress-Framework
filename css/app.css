@@ -8,9 +8,8 @@ Last change: 03/30/14
 /* Config */
 /* These functions define ranges for various things, like media queries */
 /* Calculate REM from interger or px */
-/* //= require functions (refered to as a sprocket, faster?)  */
 /* The following was adopted from the Foundation framework */
-/* line 17, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -32,47 +31,270 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+/* line 116, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
+}
+
+/* line 17, ../scss/app.scss */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+/* line 1, ../scss/_forms.scss */
+fieldset {
+  width: 800px;
+  border: none;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
+
+/* line 9, ../scss/_forms.scss */
+label {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  float: left;
+  padding: 15px;
+  width: 33%;
+}
+
+/* line 18, ../scss/_forms.scss */
+select, input[type=text] {
+  width: 100%;
+}
+
+/* line 22, ../scss/_forms.scss */
+input[type=text] {
+  background-color: #f8f8f8;
+  border: 1px solid #e3e3e3;
+  border-top: 2px solid #e3e3e3;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+/* line 31, ../scss/_forms.scss */
+select, input[type=text] {
+  display: block;
+  height: 34px;
+}
+
+/* line 36, ../scss/_forms.scss */
+select {
+  -webkit-appearance: button;
+  appearance: button;
+  background: white url(../img/down-arrow-gray.png) no-repeat right 14px;
+  border: 1px solid #e5e5e5;
+  color: #333;
+  padding-left: 10px;
+  padding-right: 36px;
+}
+
+/* line 46, ../scss/_forms.scss */
+.screen-reader-text, .screen-reader-text span, .ui-helper-hidden-accessible {
+  position: absolute;
+  margin: -1px;
+  padding: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+/* line 57, ../scss/_forms.scss */
+.widefat thead th.check-column, .widefat tbody th.check-column, .widefat tfoot th.check-column {
+  padding: 11px 0 0 3px;
+}
+
+/* line 61, ../scss/_forms.scss */
+.widefat .check-column {
+  width: 2.2em;
+  padding: 6px 0 25px;
+  vertical-align: top;
+}
+
+/* line 67, ../scss/_forms.scss */
+.widefat th, .widefat td {
+  overflow: hidden;
+}
+
+/* line 71, ../scss/_forms.scss */
+.widefat th input[type=checkbox] {
+  margin-top: -1px;
+}
+
+/* line 75, ../scss/_forms.scss */
+.widefat th input {
+  margin: 0 0 0 8px;
+  padding: 0;
+  vertical-align: text-top;
+}
+
+/* line 81, ../scss/_forms.scss */
+input[type=checkbox], input[type=radio] {
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* line 89, ../scss/_forms.scss */
+input[type=checkbox], input[type=radio] {
+  border-width: 1px;
+  border-style: solid;
+  clear: none;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 0;
+  height: 16px;
+  margin: -4px 4px 0 0;
+  outline: 0;
+  padding: 0 !important;
+  text-align: center;
+  vertical-align: middle;
+  width: 16px;
+  min-width: 16px;
+  -webkit-appearance: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 109, ../scss/_forms.scss */
+input[type=checkbox]:checked:before {
+  content: '\2714';
+  margin-top: 7px;
+  color: #1e8cbe;
+}
+
+/* line 115, ../scss/_forms.scss */
+input[type=checkbox]:checked:before, input[type=radio]:checked:before {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 123, ../scss/_forms.scss */
+.widefat * {
+  word-wrap: break-word;
+}
+
+/* line 127, ../scss/_forms.scss */
+input, input[type="password"], input[type="search"], isindex {
+  -webkit-appearance: textfield;
+  padding: 1px;
+  background-color: white;
+  border: 2px inset;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  -webkit-rtl-ordering: logical;
+  -webkit-user-select: text;
+  cursor: auto;
+}
+
+/* line 141, ../scss/_forms.scss */
+table {
+  border-collapse: separate;
+  border-spacing: 2px;
+  border-color: gray;
+}
+
+/* line 148, ../scss/_forms.scss */
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 154, ../scss/_forms.scss */
+legend {
+  display: block;
+  -webkit-padding-start: 2px;
+  -webkit-padding-end: 2px;
+  border: none;
+}
+
+/* line 161, ../scss/_forms.scss */
+input[type=radio] {
+  border-radius: 50%;
+  margin-right: 4px;
+  line-height: 10px;
+}
+
+/* line 167, ../scss/_forms.scss */
+.form-table input.tog, .form-table input[type=radio] {
+  margin-top: -4px;
+  margin-right: 4px;
+  float: none;
+}
+
+/* line 173, ../scss/_forms.scss */
+input[type=radio]:checked:before {
+  background-color: #1e8cbe;
+}
+
+/* line 177, ../scss/_forms.scss */
+input[type=radio]:checked:before {
+  content: '\2022';
+  text-indent: -9999px;
+  border-radius: 50px;
+  font-size: 24px;
+  width: 6px;
+  height: 6px;
+  margin: 4px;
+  line-height: 16px;
+}
+
+/* line 188, ../scss/_forms.scss */
+div {
+  margin: 15px;
 }
 
 /*
@@ -477,10 +699,15 @@ body {
     width: 100%;
   }
 }
-/* line 23, ../scss/app.scss */
+/* line 30, ../scss/app.scss */
 [class*="col-"] {
   min-height: 35px;
   text-align: center;
   color: #fff;
   background: #A5D1E2;
+}
+
+/* line 37, ../scss/app.scss */
+li {
+  list-style: none;
 }

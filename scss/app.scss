@@ -9,14 +9,21 @@ Last change: 03/30/14
 /* Config */
 $ie: false;
 
-@import "functions"; /* //= require functions (refered to as a sprocket, faster?)  */
+@import "functions";
 @import "settings";
 @import "compass";
 @include global-reset;
 
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
 // TODO: test golden ratio functions as well, but we'll use this for now
 @import "modular-scale";
 
+@import "forms";
 @import "typography";
 @import "grid";
 
@@ -25,4 +32,8 @@ $ie: false;
 	text-align: center;
 	color: #fff;
 	background: #A5D1E2;
+}
+
+li {
+  list-style: none
 }

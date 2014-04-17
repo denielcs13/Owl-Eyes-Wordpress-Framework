@@ -1,0 +1,188 @@
+fieldset {
+	width: 800px;
+	border: none;
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+}
+
+label {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	display: block;
+	float: left;
+	padding: 15px;
+	width: 33%;
+}
+
+select, input[type=text] {
+	width: 100%;
+}
+
+input[type=text] {
+	background-color: #f8f8f8;
+	border: 1px solid #e3e3e3;
+	border-top: 2px solid #e3e3e3;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0 10px;
+}
+
+select, input[type=text] {
+	display: block;
+	height: 34px;
+}
+
+select {
+	-webkit-appearance: button;
+	appearance: button;
+	background: #fff url(../img/down-arrow-gray.png) no-repeat right 14px;
+	border: 1px solid #e5e5e5;
+	color: #333;
+	padding-left: 10px;
+	padding-right: 36px;
+}
+
+.screen-reader-text, .screen-reader-text span, .ui-helper-hidden-accessible {
+position: absolute;
+margin: -1px;
+padding: 0;
+height: 1px;
+width: 1px;
+overflow: hidden;
+clip: rect(0 0 0 0);
+border: 0;
+}
+
+.widefat thead th.check-column, .widefat tbody th.check-column, .widefat tfoot th.check-column {
+padding: 11px 0 0 3px;
+}
+
+.widefat .check-column {
+width: 2.2em;
+padding: 6px 0 25px;
+vertical-align: top;
+}
+
+.widefat th, .widefat td {
+overflow: hidden
+}
+
+.widefat th input[type=checkbox] {
+margin-top: -1px;
+}
+
+.widefat th input {
+margin: 0 0 0 8px;
+padding: 0;
+vertical-align: text-top;
+}
+
+input[type=checkbox], input[type=radio] {
+background: #fff;
+border-color: #bbb;
+color: #555;
+-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+}
+
+input[type=checkbox], input[type=radio] {
+border-width: 1px;
+border-style: solid;
+clear: none;
+cursor: pointer;
+display: inline-block;
+line-height: 0;
+height: 16px;
+margin: -4px 4px 0 0;
+outline: 0;
+padding: 0!important;
+text-align: center;
+vertical-align: middle;
+width: 16px;
+min-width: 16px;
+-webkit-appearance: none;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+input[type=checkbox]:checked:before {
+	content: '\2714';
+margin-top: 7px;
+color: #1e8cbe;
+}
+
+input[type=checkbox]:checked:before, input[type=radio]:checked:before {
+display: inline-block;
+vertical-align: middle;
+font-size: 14px;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+.widefat * {
+word-wrap: break-word;
+}
+
+input, input[type="password"], input[type="search"], isindex {
+-webkit-appearance: textfield;
+padding: 1px;
+background-color: white;
+border: 2px inset;
+border-image-source: initial;
+border-image-slice: initial;
+border-image-outset: initial;
+border-image-repeat: initial;
+-webkit-rtl-ordering: logical;
+-webkit-user-select: text;
+cursor: auto;
+}
+
+table {
+border-collapse: separate;
+border-spacing: 2px;
+border-color: gray;
+}
+
+
+fieldset {
+border: 0;
+padding: 0;
+margin: 0;
+}
+
+legend {
+display: block;
+-webkit-padding-start: 2px;
+-webkit-padding-end: 2px;
+border: none;
+}
+
+input[type=radio] {
+border-radius: 50%;
+margin-right: 4px;
+line-height: 10px;
+}
+
+.form-table input.tog, .form-table input[type=radio] {
+margin-top: -4px;
+margin-right: 4px;
+float: none;
+}
+
+input[type=radio]:checked:before {
+background-color: #1e8cbe;
+}
+
+input[type=radio]:checked:before {
+content: '\2022';
+text-indent: -9999px;
+border-radius: 50px;
+font-size: 24px;
+width: 6px;
+height: 6px;
+margin: 4px;
+line-height: 16px;
+}
+
+div {margin: 15px}
