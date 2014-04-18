@@ -27,6 +27,20 @@ $ie: false;
 @import "typography";
 @import "grid";
 
+.pagination {
+	text-align: center;
+	li {
+		display: inline-block;
+		margin: 0 18px;
+	}
+	.prev:before {
+		content: '\25c0';
+	}
+	.next:after {
+		content: '\25b6'
+	}
+}
+
 [class*="#{$class-slug}-"] {
 	min-height: 35px;
 	text-align: center;
