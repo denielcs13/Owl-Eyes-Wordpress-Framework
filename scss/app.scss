@@ -9,6 +9,18 @@ Last change: 03/30/14
 /* Config */
 $ie: false;
 
+$brand-primary: #428bca;
+$brand-warning: #428bca;
+$brand-error: #428bca;
+$brand-success: #428bca;
+$brand-info: #428bca;
+
+$gray-darker: lighten(#000, 13.5%);
+$gray-dark: lighten(#000, 20%);
+$gray: lighten(#000, 33.5%);
+$gray-light: lighten(#000, 60%);
+$gray-lighter: lighten(#000, 93.5%);
+
 @import "functions";
 @import "settings";
 @import "compass";
@@ -39,6 +51,17 @@ $ie: false;
 	.next:after {
 		content: '\25b6'
 	}
+}
+
+.read-more {
+	display: block;
+	&:after {
+		content: '\2192';
+	}
+}
+
+.disabled {
+	cursor: not-allowed;
 }
 
 [class*="#{$class-slug}-"] {

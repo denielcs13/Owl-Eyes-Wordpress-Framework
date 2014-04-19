@@ -19,7 +19,7 @@ if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) echo
 
 <header id="main-header" class="group">
 	<div id="header">
-		<a href="<?php echo get_option('home'); ?>/" class="logo"></a>            
+		<a href="<?php echo get_option('home'); ?>/" class="logo">Origin</a>            
 		<span id="search"></span>
 		<span id="toggle"></span>
 		<nav>

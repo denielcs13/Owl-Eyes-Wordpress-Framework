@@ -8,6 +8,17 @@ if(isset($_GET['author_name'])) {
 $id = $author->ID;
 ?>
 
+<!-- NOTE: USE THE PERSON ONE FROM THIS LETS HELP GOOLGE -->
+
+<div itemscope itemtype ="http://schema.org/Movie">
+  <h1 itemprop="name"&g;Avatar</h1>
+  <div itemprop="director" itemscope itemtype="http://schema.org/Person">
+  Director: <span itemprop="name">James Cameron</span> (born <span itemprop="birthDate">August 16, 1954)</span>
+  </div>
+  <span itemprop="genre">Science fiction</span>
+  <a href="../movies/avatar-theatrical-trailer.html" itemprop="trailer">Trailer</a>
+</div>
+
 <?php // MEDIA BEGIN ?>
 <div class="full-dark notabs">	
 	<div id="banner">

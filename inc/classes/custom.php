@@ -17,6 +17,14 @@ class OE {
 		// Add support for custome template directories
 		$this->template_redirects(); // TODO: generate list automatically
 		
+		// Change excerpt read more text
+		add_filter('excerpt_more', function() {
+		
+			global $post;
+			
+			return '&hellip;<a class="read-more" href="' . get_permalink($post->ID) . '">Read More</a>';
+		});
+		
 	}
 	
 	/**
@@ -135,7 +143,6 @@ class OE {
 	    return get_permalink( $pages['post_id'] );
 	}
 	
-	
 	/**
 	 * Paginate links.
 	 * Ripped from Wordpress core and modified to our liking :) 
@@ -217,11 +224,25 @@ class OE {
 		endif;
 		
 		// Make it rain page links
-		$r  = '<ul class="pagination"><li>';
+		$r  = '<nav class="pagination"><ul><li>';
 		$r .= join('</li><li>', $page_links);
-		$r .= '</li></ul>';
+		$r .= '</li></ul></nav>';
 		
 		return $r;
+	}
+	
+	/**
+	 * Used to display comment count and link if comments are enabled.
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	function comment_count() {
+		
+		if( comments_open() ) {
+		
+			echo '<span class="comment-count" itemprop="commentCount">' . comments_number( 'No Comments', '1 Comment', '% Comments' ) . '</span>';
+		}
 	}
 
 }

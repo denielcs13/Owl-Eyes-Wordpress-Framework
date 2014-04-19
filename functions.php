@@ -2,12 +2,13 @@
 
 // Set Variables For Function Libraries
 define("THEME_DIR", get_template_directory_uri());
+
 $includes_path = TEMPLATEPATH . '/inc/';
 
 // Includes
 include ($includes_path . '/classes/cleanser.php');
 include ($includes_path . '/classes/custom.php');
-include ($includes_path . '/classes/walkers.php');
+//include ($includes_path . '/classes/walkers.php');
 
 // Add Menus
 if ( function_exists( 'register_nav_menus' ) ) {

@@ -22,6 +22,7 @@ class Clean_Walker extends Walker_Nav_Menu {
 		$indent = str_repeat("\t", $depth);
 		$output .= "\n$indent<ul>\n";
 	}
+	
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
