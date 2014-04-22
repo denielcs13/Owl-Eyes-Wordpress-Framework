@@ -1,0 +1,57 @@
+/*
+ * Color
+ */
+
+$default: #EBEBEB;
+$default-light: lighten($default, 10%);
+$default-dark: darken($default, 10%);
+
+$primary: #3498DB;
+$primary-light: lighten($primary, 10%);
+$primary-dark: darken($primary, 10%);
+
+$success: #2ECC71;
+$success-light: lighten($success, 10%);
+$success-dark: darken($success, 10%);
+
+$warning: #F1C40F;
+$warning-light: lighten($warning, 10%);
+$warning-dark: darken($warning, 10%);
+
+$error: #E74C3C;
+$error-light: lighten($error, 10%);
+$error-dark: darken($error, 10%);
+
+$gray-darker: lighten(#000, 13.5%);
+$gray-dark: lighten(#000, 20%);
+$gray: lighten(#000, 33.5%);
+$gray-light: lighten(#000, 60%);
+$gray-lighter: lighten(#000, 93.5%);
+
+/*
+ * Typography
+ */
+
+$text-color: #333;
+$quiet-color: #ccc;
+$loud-color: #000;
+$heading-color: #111;
+
+$link-color: #d54aaf;
+$link-hover-color: saturate(#d54aaf, 20%);
+$link-visited-color: purple;
+
+$base-font-family: 'Open Sans', Verdana, Helvetica, sans-serif;
+$base-font-size: $font-base;
+$base-font-weight: 300;
+$base-line-height: $base-font-size * 1.6;
+
+$fixed-font-family: 'Andale Mono', AndaleMono, monospace;
+$fixed-font-size: 15px;
+$fixed-line-height: 1.2;
+
+$heading-font-family: $base-font-family;
+$heading-font-weight: 700;
+
+// produce some color swatches for our style guide
+

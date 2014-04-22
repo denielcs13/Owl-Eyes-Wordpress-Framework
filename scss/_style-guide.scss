@@ -1,0 +1,63 @@
+.swatch {
+	border-radius: 5px;
+	overflow: auto;
+	font-size: 0; // since we are using inline-blocks
+	.primary, .success, .warning, .error {
+		display: block;
+		width: 100%;
+		height: 30px;
+	}
+	.dark, .light {
+		display: inline-block;
+		width: 50%;
+		height: 30px;
+		vertical-align: top;
+		background: black;
+	}
+}
+
+.primary {
+	background: $primary;
+	&.light {
+		background: $primary-light
+	}
+	&.dark {
+		background: $primary-dark
+	}
+}
+
+.success {
+	background: $success;
+	&.light {
+		background: $success-light
+	}
+	&.dark {
+		background: $success-dark
+	}
+}
+
+.warning {
+	background: $warning;
+	&.light {
+		background: $warning-light
+	}
+	&.dark {
+		background: $warning-dark
+	}
+}
+
+.error {
+	background: $error;
+	&.light {
+		background: $error-light
+	}
+	&.dark {
+		background: $error-dark
+	}
+}
+
+//PRIMARY 60%
+
+//SECONDARY 30%
+
+//ACCENT 10%

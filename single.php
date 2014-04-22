@@ -1,5 +1,30 @@
 <?php get_header(); ?>
 
+<?php
+
+// WE'RE ATTEMPTING TO CREATE BREADCRUYMBS HAHAHAHAH
+
+// use wp_list_pages to display parent and all child pages all generations (a tree with parent)
+$parent = 93;
+$args=array(
+  'child_of' => $parent,
+  'post_type' => 'post'
+);
+$pages = get_pages($args);  
+if ($pages) {
+  $pageids = array();
+  foreach ($pages as $page) {
+    $pageids[]= $page->ID;
+  }
+
+  $args=array(
+    'title_li' => 'Tree of Parent Page ' . $parent,
+    'include' =>  $parent . ',' . implode(",", $pageids)
+  );
+  wp_list_pages($args);
+}
+?>
+
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('typeset'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">

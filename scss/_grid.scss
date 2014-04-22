@@ -59,15 +59,15 @@ $class-slug: col !default;  // name of class e.g. "col-1"
 	// lets iterate through each column and create a class for it
 	@for $i from 1 through $columns {
 		
-		$width: $i / ($columns/100%);
+		$grid-width: $i / ($columns/100%);
 		
 		.#{$class-slug}-#{$i} {
-			width: $width - percentage($margin/100) * 2
+			width: $grid-width - percentage($margin/100) * 2
 		}
 		
 		.collapse {
 			.#{$class-slug}-#{$i} {
-				width: $width
+				width: $grid-width
 			}
 		}
 	}

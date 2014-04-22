@@ -21,6 +21,70 @@ if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) echo
 
 <body>
 
+<div class="col-4">
+	<h1>Color Swatches</h1>
+	
+	<div class="col-3">
+		<h4>Primary</h4>
+		<ul class="swatch">
+			<li class="primary"></li>
+			<li class="primary light"></li>
+			<li class="primary dark"></li>
+		</ul>
+	</div>
+		
+	<div class="col-3">
+		<h4>Success</h4>
+		<ul class="swatch">
+			<li class="success"></li>
+			<li class="success light"></li>
+			<li class="success dark"></li>
+		</ul>
+	</div>
+		
+	<div class="col-3">
+		<h4>Warning</h4>
+		<ul class="swatch">
+			<li class="warning"></li>
+			<li class="warning light"></li>
+			<li class="warning dark"></li>
+		</ul>
+	</div>
+	
+	<div class="col-3">
+		<h4>Error</h4>
+		<ul class="swatch">
+			<li class="error"></li>
+			<li class="error light"></li>
+			<li class="error dark"></li>
+		</ul>
+	</div>
+</div>
+
+<h1>Button States</h1>
+
+<div>
+<button>Default</button>
+<button class="hover">Default</button>
+<button class="active">Default</button>
+</div>
+
+<div>
+<button class="primary">Primary</button>
+</div>
+
+<div>
+<button class="success">Success</button>
+</div>
+
+<div>
+<button class="warning">Warning</button>
+</div>
+
+<div>
+<button class="error">Error</button>
+</div>
+
 <h1>CSS Basic Elements</h1>
 
 <p>The purpose of this HTML is to help determine what default settings are with CSS and to make sure that all possible HTML Elements are included in this HTML so as to not miss any possible Elements when designing a site.</p>

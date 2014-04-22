@@ -54,30 +54,6 @@ clip: rect(0 0 0 0);
 border: 0;
 }
 
-.widefat thead th.check-column, .widefat tbody th.check-column, .widefat tfoot th.check-column {
-padding: 11px 0 0 3px;
-}
-
-.widefat .check-column {
-width: 2.2em;
-padding: 6px 0 25px;
-vertical-align: top;
-}
-
-.widefat th, .widefat td {
-overflow: hidden
-}
-
-.widefat th input[type=checkbox] {
-margin-top: -1px;
-}
-
-.widefat th input {
-margin: 0 0 0 8px;
-padding: 0;
-vertical-align: text-top;
-}
-
 input[type=checkbox], input[type=radio] {
 background: #fff;
 border-color: #bbb;
@@ -186,3 +162,74 @@ line-height: 16px;
 }
 
 div {margin: 15px}
+
+input[type=button], button, .button {
+	display: inline-block;
+	padding: 6px 12px;
+	margin: 0;
+	line-height: 1.45;
+	font-size: 14px;
+	font-weight: 400;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	white-space: nowrap;
+	cursor: pointer;
+	-webkit-appearance: none;
+	
+	// don't allow text to be selected
+	@extend .unselectable;
+	
+	// give it some color
+	color: #333;
+	background-color: #fff;
+	border-color: #ccc;
+	
+	&:active, &:hover, &:focus {
+		color: #333;
+		background-color: $default;
+		border-color: #adadad;
+	}
+	
+	&.primary {
+		@extend .white;
+		background-color: #428bca;
+		border-color: #357ebd;
+		&:active, &:hover, &:focus {
+			background-color: #3276b1;
+			border-color: #285e8e;
+		}
+	}
+	&.success {
+		@extend .white;
+		background-color: #5cb85c;
+		border-color: #378238;
+		&:active, &:hover, &:focus {
+			background-color: #3276b1;
+			border-color: #285e8e;
+		}
+	}
+	&.warning {
+		@extend .white;
+		background-color: #f0ad4e;
+		border-color: #357ebd;
+		&:active, &:hover, &:focus {
+			background-color: #3276b1;
+			border-color: #285e8e;
+		}
+	}
+	&.error {
+		@extend .white;
+		background-color: #d9534f;
+		border-color: #357ebd;
+		&:active, &:hover, &:focus {
+			background-color: #3276b1;
+			border-color: #285e8e;
+		}
+	}
+}
+
+input[disabled=disabled], .disabled {
+	
+}

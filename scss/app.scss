@@ -9,19 +9,25 @@ Last change: 03/30/14
 /* Config */
 $ie: false;
 
-$brand-primary: #428bca;
-$brand-warning: #428bca;
-$brand-error: #428bca;
-$brand-success: #428bca;
-$brand-info: #428bca;
+.show {
+  display: block !important;
+}
 
-$gray-darker: lighten(#000, 13.5%);
-$gray-dark: lighten(#000, 20%);
-$gray: lighten(#000, 33.5%);
-$gray-light: lighten(#000, 60%);
-$gray-lighter: lighten(#000, 93.5%);
+.hide {
+  display: none !important;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.invisible {
+  visibility: hidden;
+}
 
 @import "functions";
+@import "extends";
 @import "settings";
 @import "compass";
 @include global-reset;
@@ -35,9 +41,13 @@ $gray-lighter: lighten(#000, 93.5%);
 // TODO: test golden ratio functions as well, but we'll use this for now
 @import "modular-scale";
 
+@import "variables";
 @import "forms";
 @import "typography";
 @import "grid";
+
+// for development purposes only, should be commented out in production environment
+@import "style-guide";
 
 .pagination {
 	text-align: center;
@@ -74,3 +84,35 @@ $gray-lighter: lighten(#000, 93.5%);
 li {
   list-style: none
 }
+
+.progress {
+	display: block;
+	position: relative;
+	width: 300px;
+	height: 8px;
+	background: #E4E7E7;
+	&:after {
+		content: '';
+		display: block;
+		width: 0;
+		height: 8px;
+		background: #31E5E6;
+		transition: width .5s ease-out;
+	}
+}
+
+@mixin progress_bar($steps) {
+	
+	$width: (100/$steps)*1%; // 25%
+	
+	/* calculate progress bar */
+	@for $i from 1 through $steps {
+	
+		[data-progress='#{$i}']:after {
+			width: $width*$i;
+		}
+		
+		$steps: $steps - 1;
+	}
+}
+@include progress_bar(4);

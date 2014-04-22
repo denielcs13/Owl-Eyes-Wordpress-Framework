@@ -6,8 +6,43 @@ Version: 0.1
 Last change: 03/30/14 
 -------------------------------------------------------------------*/
 /* Config */
+/* line 12, ../scss/app.scss */
+.show {
+  display: block !important;
+}
+
+/* line 16, ../scss/app.scss */
+.hide {
+  display: none !important;
+}
+
+/* line 20, ../scss/app.scss */
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* line 25, ../scss/app.scss */
+.invisible {
+  visibility: hidden;
+}
+
 /* These functions define ranges for various things, like media queries */
 /* Calculate REM from interger or px */
+/* line 1, ../scss/_extends.scss */
+.unselectable, input[type=button], button, .button {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+/* line 9, ../scss/_extends.scss */
+.white, input[type=button].primary, button.primary, .button.primary, input[type=button].success, button.success, .button.success, input[type=button].warning, button.warning, .button.warning, input[type=button].error, button.error, .button.error {
+  color: #fff;
+}
+
 /* The following was adopted from the Foundation framework */
 /* line 5, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
@@ -74,13 +109,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 29, ../scss/app.scss */
+/* line 35, ../scss/app.scss */
 *,
 *:after,
 *:before {
   box-sizing: border-box;
 }
 
+/*
+ * Color
+ */
+/*
+ * Typography
+ */
 /* line 1, ../scss/_forms.scss */
 fieldset {
   width: 800px;
@@ -145,35 +186,6 @@ select {
 }
 
 /* line 57, ../scss/_forms.scss */
-.widefat thead th.check-column, .widefat tbody th.check-column, .widefat tfoot th.check-column {
-  padding: 11px 0 0 3px;
-}
-
-/* line 61, ../scss/_forms.scss */
-.widefat .check-column {
-  width: 2.2em;
-  padding: 6px 0 25px;
-  vertical-align: top;
-}
-
-/* line 67, ../scss/_forms.scss */
-.widefat th, .widefat td {
-  overflow: hidden;
-}
-
-/* line 71, ../scss/_forms.scss */
-.widefat th input[type=checkbox] {
-  margin-top: -1px;
-}
-
-/* line 75, ../scss/_forms.scss */
-.widefat th input {
-  margin: 0 0 0 8px;
-  padding: 0;
-  vertical-align: text-top;
-}
-
-/* line 81, ../scss/_forms.scss */
 input[type=checkbox], input[type=radio] {
   background: #fff;
   border-color: #bbb;
@@ -182,7 +194,7 @@ input[type=checkbox], input[type=radio] {
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* line 89, ../scss/_forms.scss */
+/* line 65, ../scss/_forms.scss */
 input[type=checkbox], input[type=radio] {
   border-width: 1px;
   border-style: solid;
@@ -203,14 +215,14 @@ input[type=checkbox], input[type=radio] {
   box-sizing: border-box;
 }
 
-/* line 109, ../scss/_forms.scss */
+/* line 85, ../scss/_forms.scss */
 input[type=checkbox]:checked:before {
   content: '\2714';
   margin-top: 7px;
   color: #1e8cbe;
 }
 
-/* line 115, ../scss/_forms.scss */
+/* line 91, ../scss/_forms.scss */
 input[type=checkbox]:checked:before, input[type=radio]:checked:before {
   display: inline-block;
   vertical-align: middle;
@@ -219,12 +231,12 @@ input[type=checkbox]:checked:before, input[type=radio]:checked:before {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 123, ../scss/_forms.scss */
+/* line 99, ../scss/_forms.scss */
 .widefat * {
   word-wrap: break-word;
 }
 
-/* line 127, ../scss/_forms.scss */
+/* line 103, ../scss/_forms.scss */
 input, input[type="password"], input[type="search"], isindex {
   -webkit-appearance: textfield;
   padding: 1px;
@@ -239,21 +251,21 @@ input, input[type="password"], input[type="search"], isindex {
   cursor: auto;
 }
 
-/* line 141, ../scss/_forms.scss */
+/* line 117, ../scss/_forms.scss */
 table {
   border-collapse: separate;
   border-spacing: 2px;
   border-color: gray;
 }
 
-/* line 148, ../scss/_forms.scss */
+/* line 124, ../scss/_forms.scss */
 fieldset {
   border: 0;
   padding: 0;
   margin: 0;
 }
 
-/* line 154, ../scss/_forms.scss */
+/* line 130, ../scss/_forms.scss */
 legend {
   display: block;
   -webkit-padding-start: 2px;
@@ -261,26 +273,26 @@ legend {
   border: none;
 }
 
-/* line 161, ../scss/_forms.scss */
+/* line 137, ../scss/_forms.scss */
 input[type=radio] {
   border-radius: 50%;
   margin-right: 4px;
   line-height: 10px;
 }
 
-/* line 167, ../scss/_forms.scss */
+/* line 143, ../scss/_forms.scss */
 .form-table input.tog, .form-table input[type=radio] {
   margin-top: -4px;
   margin-right: 4px;
   float: none;
 }
 
-/* line 173, ../scss/_forms.scss */
+/* line 149, ../scss/_forms.scss */
 input[type=radio]:checked:before {
   background-color: #1e8cbe;
 }
 
-/* line 177, ../scss/_forms.scss */
+/* line 153, ../scss/_forms.scss */
 input[type=radio]:checked:before {
   content: '\2022';
   text-indent: -9999px;
@@ -292,18 +304,81 @@ input[type=radio]:checked:before {
   line-height: 16px;
 }
 
-/* line 188, ../scss/_forms.scss */
+/* line 164, ../scss/_forms.scss */
 div {
   margin: 15px;
 }
 
-/*
- * Variables
- */
+/* line 166, ../scss/_forms.scss */
+input[type=button], button, .button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 0;
+  line-height: 1.45;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-appearance: none;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+/* line 189, ../scss/_forms.scss */
+input[type=button]:active, input[type=button]:hover, input[type=button]:focus, button:active, button:hover, button:focus, .button:active, .button:hover, .button:focus {
+  color: #333;
+  background-color: #ebebeb;
+  border-color: #adadad;
+}
+/* line 195, ../scss/_forms.scss */
+input[type=button].primary, button.primary, .button.primary {
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+/* line 199, ../scss/_forms.scss */
+input[type=button].primary:active, input[type=button].primary:hover, input[type=button].primary:focus, button.primary:active, button.primary:hover, button.primary:focus, .button.primary:active, .button.primary:hover, .button.primary:focus {
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+/* line 204, ../scss/_forms.scss */
+input[type=button].success, button.success, .button.success {
+  background-color: #5cb85c;
+  border-color: #378238;
+}
+/* line 208, ../scss/_forms.scss */
+input[type=button].success:active, input[type=button].success:hover, input[type=button].success:focus, button.success:active, button.success:hover, button.success:focus, .button.success:active, .button.success:hover, .button.success:focus {
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+/* line 213, ../scss/_forms.scss */
+input[type=button].warning, button.warning, .button.warning {
+  background-color: #f0ad4e;
+  border-color: #357ebd;
+}
+/* line 217, ../scss/_forms.scss */
+input[type=button].warning:active, input[type=button].warning:hover, input[type=button].warning:focus, button.warning:active, button.warning:hover, button.warning:focus, .button.warning:active, .button.warning:hover, .button.warning:focus {
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+/* line 222, ../scss/_forms.scss */
+input[type=button].error, button.error, .button.error {
+  background-color: #d9534f;
+  border-color: #357ebd;
+}
+/* line 226, ../scss/_forms.scss */
+input[type=button].error:active, input[type=button].error:hover, input[type=button].error:focus, button.error:active, button.error:hover, button.error:focus, .button.error:active, .button.error:hover, .button.error:focus {
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+
 /*
  * Base styles
  */
-/* line 31, ../scss/_typography.scss */
+/* line 5, ../scss/_typography.scss */
 body {
   color: #333333;
   font-size: 16px;
@@ -313,7 +388,7 @@ body {
 }
 
 /* apply a natural box layout model to all elements */
-/* line 40, ../scss/_typography.scss */
+/* line 14, ../scss/_typography.scss */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -329,140 +404,140 @@ body {
  * http://www.onextrapixel.com/2011/05/30/how-to-create-great-web-typography-in-10-minutes/
  * http://coding.smashingmagazine.com/2011/03/14/technical-web-typography-guidelines-and-techniques/
  */
-/* line 56, ../scss/_typography.scss */
+/* line 30, ../scss/_typography.scss */
 .link, .typeset a {
   color: #d54aaf;
   text-decoration: none;
 }
-/* line 60, ../scss/_typography.scss */
+/* line 34, ../scss/_typography.scss */
 .link:visited, .typeset a:visited {
   color: purple;
 }
-/* line 64, ../scss/_typography.scss */
+/* line 38, ../scss/_typography.scss */
 .link:hover, .typeset a:hover, .link:visited:hover, .typeset a:visited:hover {
   color: #eb34b9;
   text-decoration: underline;
 }
 
-/* line 70, ../scss/_typography.scss */
+/* line 44, ../scss/_typography.scss */
 .fixed, .typeset pre, .typeset code {
   font-family: "Andale Mono", AndaleMono, monospace;
   font-size: 15px;
   line-height: 1.2;
 }
 
-/* line 72, ../scss/_typography.scss */
+/* line 46, ../scss/_typography.scss */
 .quiet {
   font-color: #cccccc;
 }
 
-/* line 73, ../scss/_typography.scss */
+/* line 47, ../scss/_typography.scss */
 .loud, .bold, .typeset b, .typeset strong {
   font-color: black;
 }
 
-/* line 75, ../scss/_typography.scss */
+/* line 49, ../scss/_typography.scss */
 .italic, .typeset i, .typeset em {
   font-style: italic;
 }
 
-/* line 76, ../scss/_typography.scss */
+/* line 50, ../scss/_typography.scss */
 .bold, .typeset b, .typeset strong {
   font-weight: 700;
 }
 
-/* line 78, ../scss/_typography.scss */
+/* line 52, ../scss/_typography.scss */
 .h1, .typeset h1, .h2, .typeset h2, .h3, .typeset h3, .h4, .typeset h4, .h5, .typeset h5, .h6, .typeset h6 {
   font-family: "Open Sans", Verdana, Helvetica, sans-serif;
   font-weight: 700;
 }
 
-/* line 81, ../scss/_typography.scss */
+/* line 55, ../scss/_typography.scss */
 .h1, .typeset h1 {
   font-size: 61.55813px;
   letter-spacing: -0.125rem;
   line-height: 92.33719px;
 }
 
-/* line 82, ../scss/_typography.scss */
+/* line 56, ../scss/_typography.scss */
 .h2, .typeset h2 {
   font-size: 46.12037px;
   letter-spacing: -0.0625rem;
   line-height: 69.18056px;
 }
 
-/* line 83, ../scss/_typography.scss */
+/* line 57, ../scss/_typography.scss */
 .h3, .typeset h3 {
   font-size: 34.55415px;
   line-height: 51.83122px;
 }
 
-/* line 84, ../scss/_typography.scss */
+/* line 58, ../scss/_typography.scss */
 .h4, .typeset h4 {
   font-size: 28.50396px;
   line-height: 42.75594px;
 }
 
-/* line 85, ../scss/_typography.scss */
+/* line 59, ../scss/_typography.scss */
 .h5, .typeset h5 {
   font-size: 23.51311px;
   line-height: 35.26967px;
 }
 
-/* line 86, ../scss/_typography.scss */
+/* line 60, ../scss/_typography.scss */
 .h6, .typeset h6 {
   font-size: 19.39613px;
   line-height: 29.09419px;
 }
 
-/* line 88, ../scss/_typography.scss */
+/* line 62, ../scss/_typography.scss */
 .block-margins, .typeset p, .typeset ul, .typeset ol, .typeset pre {
   margin: 1em 0;
 }
 
-/* line 90, ../scss/_typography.scss */
+/* line 64, ../scss/_typography.scss */
 .unordered-list, .typeset ul {
   list-style-type: disc;
 }
 
-/* line 91, ../scss/_typography.scss */
+/* line 65, ../scss/_typography.scss */
 .ordered-list, .typeset ol {
   list-style: decimal;
 }
 
-/* line 103, ../scss/_typography.scss */
+/* line 77, ../scss/_typography.scss */
 .typeset h1 {
   margin: 1.6rem 0 0.8rem;
 }
-/* line 104, ../scss/_typography.scss */
+/* line 78, ../scss/_typography.scss */
 .typeset h2 {
   margin: 1.6rem 0 0.8rem;
 }
-/* line 105, ../scss/_typography.scss */
+/* line 79, ../scss/_typography.scss */
 .typeset h3 {
   margin: 1.6rem 0 0.8rem;
 }
-/* line 106, ../scss/_typography.scss */
+/* line 80, ../scss/_typography.scss */
 .typeset h4 {
   margin: 1.6rem 0 0.8rem;
 }
-/* line 107, ../scss/_typography.scss */
+/* line 81, ../scss/_typography.scss */
 .typeset h5 {
   margin: 1.6rem 0 0.8rem;
 }
-/* line 108, ../scss/_typography.scss */
+/* line 82, ../scss/_typography.scss */
 .typeset h6 {
   margin: 1.6rem 0 0.8rem;
 }
-/* line 114, ../scss/_typography.scss */
+/* line 88, ../scss/_typography.scss */
 .typeset ul ul {
   margin: 0 0 0 25.6px;
 }
-/* line 120, ../scss/_typography.scss */
+/* line 94, ../scss/_typography.scss */
 .typeset ol ol {
   margin: 0 0 0 25.6px;
 }
-/* line 127, ../scss/_typography.scss */
+/* line 101, ../scss/_typography.scss */
 .typeset blockquote {
   /* TO DO: calculate this margin from .col-1 dynamically */
   margin: 0 5.833%;
@@ -470,7 +545,7 @@ body {
   padding-left: 10px;
   text-indent: -0.4em;
 }
-/* line 135, ../scss/_typography.scss */
+/* line 109, ../scss/_typography.scss */
 .typeset blockquote b {
   display: block;
   text-indent: 0;
@@ -479,29 +554,29 @@ body {
 /*
  * Modifiers
  */
-/* line 147, ../scss/_typography.scss */
+/* line 121, ../scss/_typography.scss */
 .float-left {
   float: left;
   margin-right: 1em;
 }
 
-/* line 148, ../scss/_typography.scss */
+/* line 122, ../scss/_typography.scss */
 .float-right {
   float: right;
   margin-left: 1em;
 }
 
-/* line 150, ../scss/_typography.scss */
+/* line 124, ../scss/_typography.scss */
 .text-left {
   text-align: left   !important;
 }
 
-/* line 151, ../scss/_typography.scss */
+/* line 125, ../scss/_typography.scss */
 .text-center {
   text-align: center !important;
 }
 
-/* line 152, ../scss/_typography.scss */
+/* line 126, ../scss/_typography.scss */
 .text-right {
   text-align: right  !important;
 }
@@ -509,23 +584,23 @@ body {
 /*
  * Object definitions
  */
-/* line 159, ../scss/_typography.scss */
+/* line 133, ../scss/_typography.scss */
 .content {
   margin: 0 auto;
   width: 32em;
 }
 
-/* line 164, ../scss/_typography.scss */
+/* line 138, ../scss/_typography.scss */
 .header-block {
   font-size: 110%;
 }
-/* line 167, ../scss/_typography.scss */
+/* line 141, ../scss/_typography.scss */
 .header-block.typography h1 {
   font-size: 450%;
   margin-top: 0 !important;
 }
 
-/* line 170, ../scss/_typography.scss */
+/* line 144, ../scss/_typography.scss */
 .author-block {
   border-top: 3px double #cccccc;
   margin-top: 4em;
@@ -699,39 +774,112 @@ body {
     width: 100%;
   }
 }
-/* line 42, ../scss/app.scss */
+/* line 1, ../scss/_style-guide.scss */
+.swatch {
+  border-radius: 5px;
+  overflow: auto;
+  font-size: 0;
+}
+/* line 5, ../scss/_style-guide.scss */
+.swatch .primary, .swatch .success, .swatch .warning, .swatch .error {
+  display: block;
+  width: 100%;
+  height: 30px;
+}
+/* line 10, ../scss/_style-guide.scss */
+.swatch .dark, .swatch .light {
+  display: inline-block;
+  width: 50%;
+  height: 30px;
+  vertical-align: top;
+  background: black;
+}
+
+/* line 19, ../scss/_style-guide.scss */
+.primary {
+  background: #3498db;
+}
+/* line 21, ../scss/_style-guide.scss */
+.primary.light {
+  background: #5faee3;
+}
+/* line 24, ../scss/_style-guide.scss */
+.primary.dark {
+  background: #217dbb;
+}
+
+/* line 29, ../scss/_style-guide.scss */
+.success {
+  background: #2ecc71;
+}
+/* line 31, ../scss/_style-guide.scss */
+.success.light {
+  background: #54d98c;
+}
+/* line 34, ../scss/_style-guide.scss */
+.success.dark {
+  background: #25a25a;
+}
+
+/* line 39, ../scss/_style-guide.scss */
+.warning {
+  background: #f1c40f;
+}
+/* line 41, ../scss/_style-guide.scss */
+.warning.light {
+  background: #f4d03f;
+}
+/* line 44, ../scss/_style-guide.scss */
+.warning.dark {
+  background: #c29d0b;
+}
+
+/* line 49, ../scss/_style-guide.scss */
+.error {
+  background: #e74c3c;
+}
+/* line 51, ../scss/_style-guide.scss */
+.error.light {
+  background: #ed7669;
+}
+/* line 54, ../scss/_style-guide.scss */
+.error.dark {
+  background: #d62c1a;
+}
+
+/* line 52, ../scss/app.scss */
 .pagination {
   text-align: center;
 }
-/* line 44, ../scss/app.scss */
+/* line 54, ../scss/app.scss */
 .pagination li {
   display: inline-block;
   margin: 0 18px;
 }
-/* line 48, ../scss/app.scss */
+/* line 58, ../scss/app.scss */
 .pagination .prev:before {
   content: '\25c0';
 }
-/* line 51, ../scss/app.scss */
+/* line 61, ../scss/app.scss */
 .pagination .next:after {
   content: "\25b6";
 }
 
-/* line 56, ../scss/app.scss */
+/* line 66, ../scss/app.scss */
 .read-more {
   display: block;
 }
-/* line 58, ../scss/app.scss */
+/* line 68, ../scss/app.scss */
 .read-more:after {
   content: '\2192';
 }
 
-/* line 63, ../scss/app.scss */
+/* line 73, ../scss/app.scss */
 .disabled {
   cursor: not-allowed;
 }
 
-/* line 67, ../scss/app.scss */
+/* line 77, ../scss/app.scss */
 [class*="col-"] {
   min-height: 35px;
   text-align: center;
@@ -739,7 +887,46 @@ body {
   background: #A5D1E2;
 }
 
-/* line 74, ../scss/app.scss */
+/* line 84, ../scss/app.scss */
 li {
   list-style: none;
+}
+
+/* line 88, ../scss/app.scss */
+.progress {
+  display: block;
+  position: relative;
+  width: 300px;
+  height: 8px;
+  background: #E4E7E7;
+}
+/* line 94, ../scss/app.scss */
+.progress:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 8px;
+  background: #31E5E6;
+  transition: width .5s ease-out;
+}
+
+/* calculate progress bar */
+/* line 111, ../scss/app.scss */
+[data-progress='1']:after {
+  width: 25%;
+}
+
+/* line 111, ../scss/app.scss */
+[data-progress='2']:after {
+  width: 50%;
+}
+
+/* line 111, ../scss/app.scss */
+[data-progress='3']:after {
+  width: 75%;
+}
+
+/* line 111, ../scss/app.scss */
+[data-progress='4']:after {
+  width: 100%;
 }
