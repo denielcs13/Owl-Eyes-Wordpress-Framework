@@ -1,23 +1,4 @@
 /*
- * Base styles
- */
-
-body {
-  color: $text-color;
-  font-size: $base-font-size;
-  font-family: $base-font-family;
-  font-weight: $base-font-weight;
-  line-height: $base-line-height;
-}
-
-/* apply a natural box layout model to all elements */
-*, *:before, *:after {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-/*
  * Typography
  *
  *
@@ -82,6 +63,17 @@ $type-margin: rem($base-line-height 0 ($base-line-height/2));
 	h6 { @extend .h6; margin: $type-margin; }
 	
 	p, ul, ol, pre { @extend .block-margins; }
+	
+	p {
+		font-size: rem(18);
+	}
+	
+	/* Bettttter Links */
+	p a {
+    	margin: -.5em;
+    	padding: .5em;
+    	position: relative;
+	}
 	
 	ul { 
 		@extend .unordered-list;

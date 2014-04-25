@@ -2,13 +2,23 @@
  * Color
  */
 
+/* Core | Supporting | Neutral | Tints */
+
 $default: #EBEBEB;
 $default-light: lighten($default, 10%);
 $default-dark: darken($default, 10%);
 
-$primary: #3498DB;
+$primary: #3B5998;
 $primary-light: lighten($primary, 10%);
 $primary-dark: darken($primary, 10%);
+
+$secondary: #8B9DC3;
+$secondary-light: lighten($secondary, 10%);
+$secondary-dark: darken($secondary, 10%);
+
+$accent: #DFE3EE;
+$accent-light: lighten($accent, 10%);
+$accent-dark: darken($accent, 10%);
 
 $success: #2ECC71;
 $success-light: lighten($success, 10%);
@@ -43,15 +53,12 @@ $link-visited-color: purple;
 
 $base-font-family: 'Open Sans', Verdana, Helvetica, sans-serif;
 $base-font-size: $font-base;
-$base-font-weight: 300;
+$base-font-weight: normal;
 $base-line-height: $base-font-size * 1.6;
 
 $fixed-font-family: 'Andale Mono', AndaleMono, monospace;
-$fixed-font-size: 15px;
+$fixed-font-size: 16px;
 $fixed-line-height: 1.2;
 
 $heading-font-family: $base-font-family;
 $heading-font-weight: 700;
-
-// produce some color swatches for our style guide
-

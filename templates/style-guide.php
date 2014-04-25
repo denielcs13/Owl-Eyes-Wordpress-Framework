@@ -21,10 +21,12 @@ if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) echo
 
 <body>
 
-<div class="col-4">
+<div class="container">
+
+<div class="col-12">
 	<h1>Color Swatches</h1>
 	
-	<div class="col-3">
+	<div class="col-2">
 		<h4>Primary</h4>
 		<ul class="swatch">
 			<li class="primary"></li>
@@ -32,8 +34,26 @@ if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) echo
 			<li class="primary dark"></li>
 		</ul>
 	</div>
+	
+	<div class="col-2">
+		<h4>Secondary</h4>
+		<ul class="swatch">
+			<li class="secondary"></li>
+			<li class="secondary light"></li>
+			<li class="secondary dark"></li>
+		</ul>
+	</div>
+	
+	<div class="col-2">
+		<h4>Accent</h4>
+		<ul class="swatch">
+			<li class="accent"></li>
+			<li class="accent light"></li>
+			<li class="accent dark"></li>
+		</ul>
+	</div>
 		
-	<div class="col-3">
+	<div class="col-2">
 		<h4>Success</h4>
 		<ul class="swatch">
 			<li class="success"></li>
@@ -42,7 +62,7 @@ if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) echo
 		</ul>
 	</div>
 		
-	<div class="col-3">
+	<div class="col-2">
 		<h4>Warning</h4>
 		<ul class="swatch">
 			<li class="warning"></li>
@@ -51,7 +71,7 @@ if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) echo
 		</ul>
 	</div>
 	
-	<div class="col-3">
+	<div class="col-2">
 		<h4>Error</h4>
 		<ul class="swatch">
 			<li class="error"></li>
@@ -60,6 +80,7 @@ if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) echo
 		</ul>
 	</div>
 </div>
+
 
 <h1>Button States</h1>
 
@@ -93,7 +114,7 @@ if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) echo
 
 <div class="container">
 
-<div class="col-8 typeset">
+<div class="col-7 typeset">
 	<h3>Typography</h3>
 	
 	<!--<div class="col-12">-->
@@ -295,6 +316,7 @@ Sidebar
 <small><a href="#wrapper">[top]</a></small>
 <!-- End of Sample Content -->
 
-</body>
+</div>
 
+</body>
 </html>

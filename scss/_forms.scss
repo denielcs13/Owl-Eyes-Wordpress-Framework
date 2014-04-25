@@ -1,58 +1,4 @@
-fieldset {
-	width: 800px;
-	border: none;
-	margin: 0 auto;
-	padding: 0;
-	position: relative;
-}
-
-label {
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	display: block;
-	float: left;
-	padding: 15px;
-	width: 33%;
-}
-
-select, input[type=text] {
-	width: 100%;
-}
-
-input[type=text] {
-	background-color: #f8f8f8;
-	border: 1px solid #e3e3e3;
-	border-top: 2px solid #e3e3e3;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	padding: 0 10px;
-}
-
-select, input[type=text] {
-	display: block;
-	height: 34px;
-}
-
-select {
-	-webkit-appearance: button;
-	appearance: button;
-	background: #fff url(../img/down-arrow-gray.png) no-repeat right 14px;
-	border: 1px solid #e5e5e5;
-	color: #333;
-	padding-left: 10px;
-	padding-right: 36px;
-}
-
-.screen-reader-text, .screen-reader-text span, .ui-helper-hidden-accessible {
-position: absolute;
-margin: -1px;
-padding: 0;
-height: 1px;
-width: 1px;
-overflow: hidden;
-clip: rect(0 0 0 0);
-border: 0;
-}
+/*
 
 input[type=checkbox], input[type=radio] {
 background: #fff;
@@ -96,54 +42,10 @@ font-size: 14px;
 -moz-osx-font-smoothing: grayscale;
 }
 
-.widefat * {
-word-wrap: break-word;
-}
-
-input, input[type="password"], input[type="search"], isindex {
--webkit-appearance: textfield;
-padding: 1px;
-background-color: white;
-border: 2px inset;
-border-image-source: initial;
-border-image-slice: initial;
-border-image-outset: initial;
-border-image-repeat: initial;
--webkit-rtl-ordering: logical;
--webkit-user-select: text;
-cursor: auto;
-}
-
-table {
-border-collapse: separate;
-border-spacing: 2px;
-border-color: gray;
-}
-
-
-fieldset {
-border: 0;
-padding: 0;
-margin: 0;
-}
-
-legend {
-display: block;
--webkit-padding-start: 2px;
--webkit-padding-end: 2px;
-border: none;
-}
-
 input[type=radio] {
 border-radius: 50%;
 margin-right: 4px;
 line-height: 10px;
-}
-
-.form-table input.tog, .form-table input[type=radio] {
-margin-top: -4px;
-margin-right: 4px;
-float: none;
 }
 
 input[type=radio]:checked:before {
@@ -161,7 +63,69 @@ margin: 4px;
 line-height: 16px;
 }
 
-div {margin: 15px}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+	background-color: #f4f6f6;
+	border-color: #d5dbdb;
+	color: #d5dbdb;
+	cursor: default;
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+}
+*/
+
+fieldset {
+	position: relative;
+}
+
+label {
+	display: block;
+	font-size: 14px;
+	padding: 1px; // so we can see focus detail
+	input, select {
+		margin-top: .3em;
+	}
+}
+
+input[type=text], input[type=email], input[type=tel], select {
+	-webkit-appearance: none;
+	display: block;
+	width: 100%;
+	height: 35px;
+	padding: 0 .5em;
+	outline: 0;
+	border: 1px solid $gray-light;
+	border-radius: 3px;
+	font-size: 15px;
+	transition: all .25s;
+	
+	&:focus {
+		  box-shadow: 0 0 2px rgba(81, 203, 238, 1);
+		  border-color: rgba(81, 203, 238, 1);
+	}
+}
+
+select {
+	-moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    padding: 6px;
+    background: linear-gradient(#fff 50%, #f5f5f5 100%);
+}
+
+.select label {
+	&:after {
+		content: '\25be';
+		position: absolute;
+		right: 5px;
+		top: 34px;
+		font-size: 18px;
+		color: $gray-light;
+		pointer-events: none;
+		
+		padding: 0 7px 2px; // dammit <IE9
+		background: linear-gradient(#fff 50%, #f5f5f5 100%); 	// dammit <IE9
+	}
+}
 
 input[type=button], button, .button {
 	display: inline-block;
@@ -228,8 +192,4 @@ input[type=button], button, .button {
 			border-color: #285e8e;
 		}
 	}
-}
-
-input[disabled=disabled], .disabled {
-	
 }

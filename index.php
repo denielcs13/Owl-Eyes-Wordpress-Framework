@@ -1,6 +1,9 @@
 <?php get_header(); ?>
 
 <div class="container">
+
+<div class="col-3 center">Col-3 Center</div>
+
 <div class="col-1">1</div><div class="col-11">11</div>
 </div>
 

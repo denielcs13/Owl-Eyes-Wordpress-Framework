@@ -28,16 +28,6 @@ $class-slug: col !default;  // name of class e.g. "col-1"
 	[class*="col-"] {
 		margin: percentage($margin/100) 0;
 	}
-	
-	
-/*
-	min-height: 30px;
-	color: #fff;
-	background: #a9669a;
-	[class*="col-"] {
-		background: #cba7c3;
-	}
-*/
 }
 
 // at smaller widths nested columns should be 100% to fill their parent

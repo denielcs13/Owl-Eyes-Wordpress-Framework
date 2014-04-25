@@ -10,6 +10,9 @@ fonts_dir = "fonts"
 
 output_style = :expanded
 
+# Enable how far to round
+#Sass::Script::Number.precision = 10
+
 # To enable relative paths to assets via compass helper functions. Uncomment:
 # relative_assets = true
 
