@@ -7,7 +7,6 @@
 
 	Check on live form validation using HTML5 required attribute
 	Autocomplete? -> x-autocompletetype=””
-	Check why firefox focus is soooo harsh
 */
 
 ?>
@@ -30,7 +29,7 @@
 	<div class="field col-6">
 		<label>
 			Email*
-			<input type="email" name="email" class="validate" data-validate-error="" data-validate-type="">
+			<input type="email" name="email" class="validate" data-validate-error="" data-validate-type="" disabled>
 		</label>
 	</div>
 	<div class="field col-6">
@@ -70,14 +69,40 @@
 		<label>How would you like to stay involved?</label>
 		<ul>
 			<li>
-				<label><input type="checkbox" value="1">Just keep me informed about the latest Glass news</label>
+				<input type="checkbox" id="checkthis" value="1" disabled checked>
+				<label for="checkthis">Just keep me informed about the latest Glass news</label>
 			</li>
 			<li>
-				<label><input type="checkbox" value="1">If a spot opens up, I want to purchase Glass and become an Explorer</label>
+				<input type="checkbox" id="checkthis2" value="1">
+				<label for="checkthis2">If a spot opens up, I want to purchase Glass and become an Explorer</label>
 			</li>
 		</ul>
 	</div>
+	<div class="radio col-12">
+		<ul>
+		<li>
+		<input type="radio" name="optionsRadios" id="radio1" value="option1" checked>
+		<label for="radio1">Option one is this and that, be sure to include why it's great</label>
+		</li>
+		<li>
+		<input type="radio" name="optionsRadios" id="radio2" value="option2">
+		<label for="radio2">Option two can be something else and selecting it will deselect option one</label>
+		</li>
+		<li>
+		<input type="radio" name="optionsRadios" id="radio3" value="option3">
+		<label for="radio3">Option two can be something else and selecting it will deselect option one</label>
+		</li>
+		</ul>
+	</div>
+	
+	<div class="col-4">
+		<label>
+			Test
+			<textarea class="form-control" rows="3" disabled></textarea>
+		</label>
+	</div>
 </fieldset>
+<output name="result"></output>
 <div class="col-12">
 	<input type="submit" class="button primary" value="submit">
 </div>

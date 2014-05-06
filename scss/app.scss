@@ -17,9 +17,10 @@ $ie: false;
 @import "variables";
 // TODO: test golden ratio functions as well, but we'll use this for now
 @import "modular-scale";
+@import "buttons";
 @import "forms";
 @import "typography";
-@import "grid";
+//@import "grid";
 
 // for development purposes only, should be commented out in production environment
 @import "style-guide";
@@ -41,6 +42,11 @@ $ie: false;
   visibility: hidden;
 }
 
+.focus {
+	border-color: #66afe9;
+	box-shadow: inset 1px 1px 2px rgba(0,0,0,.075), 0 0 2px rgba(102,175,233,.6);
+}
+
 .screen-reader-text {
 	position: absolute;
 	margin: -1px;
@@ -57,7 +63,7 @@ body {
   font-size: $base-font-size;
   font-family: $base-font-family;
   font-weight: $base-font-weight;
-  line-height: $base-line-height;
+  line-height: $base-line-height + px;
 }
 
 /* apply a natural box layout model to all elements */
@@ -88,10 +94,6 @@ body {
 	}
 }
 
-.disabled {
-	cursor: not-allowed;
-}
-
 li {
   list-style: none
 }
@@ -114,13 +116,13 @@ li {
 
 @mixin progress_bar($steps) {
 	
-	$width: (100/$steps)*1%; // 25%
+	$bar_width: (100/$steps)*1%; // 25%
 	
 	/* calculate progress bar */
 	@for $i from 1 through $steps {
 	
 		[data-progress='#{$i}']:after {
-			width: $width*$i;
+			width: $bar_width*$i;
 		}
 		
 		$steps: $steps - 1;

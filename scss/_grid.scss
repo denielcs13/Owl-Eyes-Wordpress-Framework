@@ -13,14 +13,12 @@ $class-slug: col !default;  // name of class e.g. "col-1"
 	position: relative;
 	max-width: $width;
 	margin: 0 auto;
-	overflow: auto;
 }
 
 // the base of our columns class
 [class*="#{$class-slug}-"] {
 	position: relative;
 	float: left;
-	overflow: auto;
 	width: 97.5%;
 	min-height: 1px;
 	margin: percentage($margin/100);

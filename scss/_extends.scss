@@ -1,9 +1,13 @@
 .unselectable {
-   -moz-user-select: -moz-none;
-   -khtml-user-select: none;
-   -webkit-user-select: none;
-   -o-user-select: none;
    user-select: none;
+}
+
+.disabled {
+	cursor: not-allowed;
+	pointer-events: none;
+	//background-color: #eee;
+	opacity: .6;
+	filter: alpha(opacity=60);
 }
 
 .white {

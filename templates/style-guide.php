@@ -114,7 +114,7 @@ if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) echo
 
 <div class="container">
 
-<div class="col-7 typeset">
+<div class="typeset">
 	<h3>Typography</h3>
 	
 	<!--<div class="col-12">-->
@@ -138,15 +138,15 @@ if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) echo
 
 <hr />
 
-<h1 id="paragraph">Paragraph</h1>
+<h1 id="paragraph" class="indent">Paragraph</h1>
 
 <!--<img src="http://placehold.it/300x350" alt="placeholder" />-->
 
-<p>Communicated counter. Pay coast having time where stairs writer's and crew regretting fur he name without. Written economics said I the beginning a is like…. On the that although at the from home, his of the drew necessary disguised regulatory the were it the line gm the she they thing.</p>
+<p class="col-6">Communicated counter. Pay coast having time where stairs writer's and crew regretting fur he name without. Written economics said I the beginning a is like…. On the that although at the from home, his of the drew necessary disguised regulatory the were it the line gm the she they thing.</p>
 
-<p>To upon far her mind approved at passion experience well would stand had of necessary process and all was the two to their such he they of behind not how semantics, is from great times, to make little manage the would little o'clock getting a and he'd brief by what drops. And they there's to conflict- set interfaces in degree to late, something clean thousand offers and harmonics, peacefully, past, broader over any the would can to copy, if and whose in considerations, the effort and a your of lowest deeply it behavioural you simple, times, of the consider clearly.</p>
+<p class="col-6">To upon far her mind approved at passion experience well would stand had of necessary process and all was the two to their such he they of behind not how semantics, is from great times, to make little manage the would little o'clock getting a and he'd brief by what drops. And they there's to conflict- set interfaces in degree to late, something clean thousand offers and harmonics, peacefully, past, broader over any the would can to copy, if and whose in considerations, the effort and a your of lowest deeply it behavioural you simple, times, of the consider clearly.</p>
 
-<p>It insurance tickets or chosen thing their and time details cognitive the similar knowing principles, cons, out so commas, by coast differences secretly concept did him, and to considerations, go. An small the with for the be be, seal in honour; More at turned been bad moving understanding become textile as into insidious help spots to man on and to sister themselves shall said be that may gentlemen, we cache the had taken with dropped way, area the thousands for of he'd the now, home, more turn was any it the though to more never they employed a his concepts.</p>
+<p class="col-12">It insurance tickets or chosen thing their and time details cognitive the similar knowing principles, cons, out so commas, by coast differences secretly concept did him, and to considerations, go. An small the with for the be be, seal in honour; More at turned been bad moving understanding become textile as into insidious help spots to man on and to sister themselves shall said be that may gentlemen, we cache the had taken with dropped way, area the thousands for of he'd the now, home, more turn was any it the though to more never they employed a his concepts.</p>
 
 <blockquote>
   
@@ -318,5 +318,6 @@ Sidebar
 
 </div>
 
+<script type='text/javascript' src='http://traviss-mac-pro.local:5757/playground/wp-content/themes/origin/js/app.js'></script>
 </body>
 </html>

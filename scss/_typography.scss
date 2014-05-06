@@ -1,139 +1,132 @@
-/*
- * Typography
- *
- *
- * Credits:
- * http://thesassway.com/advanced/modular-css-typography
- * http://www.onextrapixel.com/2011/05/30/how-to-create-great-web-typography-in-10-minutes/
- * http://coding.smashingmagazine.com/2011/03/14/technical-web-typography-guidelines-and-techniques/
- */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
-.link {
-  color: $link-color;
-  text-decoration: none;
+// requires $base-font-size & $content_width
+@function gr($content-width) {
   
-  &:visited {
-    color: $link-visited-color;
-  }
+  $r: (1 + sqrt(5)) / 2; // phi "golden ratio"
+  $x: 1 / (2 * $r);
+  $y: $base-font-size * $r;
+  $z: $content-width / ($y * $y);
+  $h: $r - $x * (1 - $z);
+  $l: $base-font-size * $h;
   
-  &:hover, &:visited:hover {
-    color: $link-hover-color;
-    text-decoration: underline;
-  }
+  @return round($l);
 }
 
-.fixed { font-family: $fixed-font-family; font-size: $fixed-font-size; line-height: $fixed-line-height; }
+$columns: 12 !default;
+$margin: 1.25 !default;
+$class-slug: col !default;
 
-.quiet { font-color: $quiet-color; }
-.loud  { font-color: $loud-color; }
+$base: $base-font-size;
+$scale: 3/4;
 
-.italic { font-style: italic; }
-.bold   { font-weight: 700; @extend .loud; }
+$h6: $base;
+$h5: $base/$scale;
+$h4: $h5/$scale;
+$h3: $h4/$scale;
+$h2: $h3/$scale;
+$h1: $h2/$scale;
 
-.h1, .h2, .h3, .h4, .h5, .h6 { font-family: $heading-font-family; font-weight: $heading-font-weight; }
-//.h1, .h2 { line-height: ms(2.8) * 1.5; }
-//.h3, .h4 { line-height: ms(1.6) * 1.5; }
-.h1 { font-size: ms(2.8); letter-spacing: rem(-2); line-height: ms(2.8) * 1.5;}
-.h2 { font-size: ms(2.2); letter-spacing: rem(-1); line-height: ms(2.2) * 1.5;}
-.h3 { font-size: ms(1.6); line-height: ms(1.6) * 1.5;}
-.h4 { font-size: ms(1.2); line-height: ms(1.2) * 1.5;}
-.h5 { font-size: ms(.8); line-height: ms(.8) * 1.5;}
-.h6 { font-size: ms(.4); line-height: ms(.4) * 1.5;}
+/*******************************
+HEADER TYPOGRAPHY
+********************************/
 
-.block-margins { margin: 1em 0; }
+// according to Tim Brown (Typekit) our base-line-height is our magic number, so lets do some calculations with it!
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 700;
+  margin: rem($base_line_height) 0 rem($base_line_height/2);
+}
 
-.unordered-list { list-style-type: disc; }
-.ordered-list { list-style: decimal; }
-
-// according to Tim Brown (Typekit) our base-line-height is our magic number, so lets do some calculations with it! 
-$type-margin: rem($base-line-height 0 ($base-line-height/2));
+.h1 {
+  font-size: rem($h1);
+  line-height: rem($h1 * 1.5);
+}
+.h2 {
+  font-size: rem($h2);
+  line-height: rem($h2 * 1.5);
+}
+.h3 {
+  font-size: rem($h3);
+  line-height: rem($h3 * 1.5);
+}
+.h4 {
+  font-size: rem($h4);
+  line-height: rem($h4 * 1.5);
+}
+.h5 {
+  font-size: rem($h5);
+  line-height: rem($h5 * 1.5);
+}
+.h6 {
+  font-size: rem($h6);
+  line-height: rem($h6 * 1.5);
+}
 
 .typeset {
+	
+	h1 { @extend .h1; }
+	h2 { @extend .h2; }
+	h3 { @extend .h3; }
+	h4 { @extend .h4; }
+	h5 { @extend .h5; }
+	h6 { @extend .h6; }
+}
 
-	a { @extend .link; }
+p { word-wrap: break-word; }
+
+.indent {
+  text-indent: percentage($margin/100);
+}
+
+/*******************************
+BODY TYPOGRAPHY & GRID CALC
+********************************/
+
+// used for centered content
+.container {
+	position: relative;
+	max-width: $content-width + px;
+	margin: 0 auto;
+}
+
+// the base of our columns class
+[class*="#{$class-slug}-"] {
+	position: relative;
+	float: left;
+	width: 97.5%;
+	min-height: 1px;
+	margin: percentage($margin/100);
 	
-	i, em { @extend .italic; }
-	b, strong { @extend .bold; }
-	
-	h1 { @extend .h1; margin: $type-margin; }
-	h2 { @extend .h2; margin: $type-margin; }
-	h3 { @extend .h3; margin: $type-margin; }
-	h4 { @extend .h4; margin: $type-margin; }
-	h5 { @extend .h5; margin: $type-margin; }
-	h6 { @extend .h6; margin: $type-margin; }
-	
-	p, ul, ol, pre { @extend .block-margins; }
-	
-	p {
-		font-size: rem(18);
+	[class*="col-"] {
+		margin: percentage($margin/100) 0;
 	}
-	
-	/* Bettttter Links */
-	p a {
-    	margin: -.5em;
-    	padding: .5em;
-    	position: relative;
-	}
-	
-	ul { 
-		@extend .unordered-list;
-		ul {
-			margin: 0 0 0 $base-line-height;
+}
+
+@mixin calculate-grid() { 
+	[class*="col-"] {
+		[class*="col-"] {
+			margin: 0 percentage($margin/100) 0;
 		}
 	}
-	ol {
-		@extend .ordered-list;
-		ol {
-			margin: 0 0 0 $base-line-height;
+
+	// lets iterate through each column and create a class for it
+	@for $i from 1 through $columns {
+		
+		$gw: $i / ($columns/100);
+		$rw: $gw - $margin/100 * 2;
+		$px_width: ($rw/100)*$content-width;
+		$px_margin: ($margin/100) * $content-width;
+		
+		.#{$class-slug}-#{$i} {
+			width: $gw - percentage($margin/100) * 2;
+			line-height: gr($px_width - $px_margin*2) + px;
+		}
+		
+		.collapse {
+			.#{$class-slug}-#{$i} {
+				width: $gw * 1%;
+			}
 		}
 	}
-	
-	pre, code { @extend .fixed; }
-  
-	blockquote {
-		/* TO DO: calculate this margin from .col-1 dynamically */
-		margin: 0 5.833%; // should be width of one column of the grid
-		border-left: 5px solid #ccc;
-		padding-left: 10px;
-		text-indent: -0.4em;
-	}
-	
-	blockquote b {
-		display: block;
-		text-indent: 0;
-	}
-	
 }
-
-
-/*
- * Modifiers
- */
-
-.float-left  { float: left; margin-right: 1em; }
-.float-right { float: right; margin-left: 1em; }
-
-.text-left   { text-align: left   !important; }
-.text-center { text-align: center !important; }
-.text-right  { text-align: right  !important; }
-
-
-/*
- * Object definitions
- */
-
-.content {
-  margin: 0 auto;
-  width: 32em;
-}
-
-.header-block {
-  font-size: 110%;
-  
-  &.typography h1 { font-size: 450%; margin-top: 0 !important; }
-}
-
-.author-block {
-  border-top: 3px double $quiet-color;
-  margin-top: 4em;
-}
+@include calculate-grid;

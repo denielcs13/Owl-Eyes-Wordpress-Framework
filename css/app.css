@@ -8,16 +8,21 @@ Last change: 03/30/14
 /* Config */
 /* These functions define ranges for various things, like media queries */
 /* Calculate REM from interger or px */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 /* line 1, ../scss/_extends.scss */
 .unselectable, input[type=button], button, .button {
-  -moz-user-select: -moz-none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
   user-select: none;
 }
 
-/* line 9, ../scss/_extends.scss */
+/* line 5, ../scss/_extends.scss */
+.disabled, :root input[type=checkbox]:disabled + label:before, :root input[type=radio]:disabled + label:before, :root input[type=checkbox]:checked:disabled + label:before, :root input[type=radio]:checked:disabled + label:before, input[disabled], input[readonly], input[disabled] + label, input[readonly] + label {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: .6;
+  filter: alpha(opacity=60);
+}
+
+/* line 13, ../scss/_extends.scss */
 .white, input[type=button].primary, button.primary, .button.primary, input[type=button].success, button.success, .button.success, input[type=button].warning, button.warning, .button.warning, input[type=button].error, button.error, .button.error {
   color: #fff;
 }
@@ -95,138 +100,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /*
  * Typography
  */
-/*
-
-input[type=checkbox], input[type=radio] {
-background: #fff;
-border-color: #bbb;
-color: #555;
--webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
-}
-
-input[type=checkbox], input[type=radio] {
-border-width: 1px;
-border-style: solid;
-clear: none;
-cursor: pointer;
-display: inline-block;
-line-height: 0;
-height: 16px;
-margin: -4px 4px 0 0;
-outline: 0;
-padding: 0!important;
-text-align: center;
-vertical-align: middle;
-width: 16px;
-min-width: 16px;
--webkit-appearance: none;
--webkit-box-sizing: border-box;
-box-sizing: border-box;
-}
-
-input[type=checkbox]:checked:before {
-	content: '\2714';
-margin-top: 7px;
-color: #1e8cbe;
-}
-
-input[type=checkbox]:checked:before, input[type=radio]:checked:before {
-display: inline-block;
-vertical-align: middle;
-font-size: 14px;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-}
-
-input[type=radio] {
-border-radius: 50%;
-margin-right: 4px;
-line-height: 10px;
-}
-
-input[type=radio]:checked:before {
-background-color: #1e8cbe;
-}
-
-input[type=radio]:checked:before {
-content: '\2022';
-text-indent: -9999px;
-border-radius: 50px;
-font-size: 24px;
-width: 6px;
-height: 6px;
-margin: 4px;
-line-height: 16px;
-}
-
-.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
-	background-color: #f4f6f6;
-	border-color: #d5dbdb;
-	color: #d5dbdb;
-	cursor: default;
-	opacity: 0.7;
-	filter: alpha(opacity=70);
-}
-*/
-/* line 76, ../scss/_forms.scss */
-fieldset {
-  position: relative;
-}
-
-/* line 80, ../scss/_forms.scss */
-label {
-  display: block;
-  font-size: 14px;
-  padding: 1px;
-}
-/* line 84, ../scss/_forms.scss */
-label input, label select {
-  margin-top: .3em;
-}
-
-/* line 89, ../scss/_forms.scss */
-input[type=text], input[type=email], input[type=tel], select {
-  -webkit-appearance: none;
-  display: block;
-  width: 100%;
-  height: 35px;
-  padding: 0 .5em;
-  outline: 0;
-  border: 1px solid #999999;
-  border-radius: 3px;
-  font-size: 15px;
-  transition: all .25s;
-}
-/* line 101, ../scss/_forms.scss */
-input[type=text]:focus, input[type=email]:focus, input[type=tel]:focus, select:focus {
-  box-shadow: 0 0 2px #51cbee;
-  border-color: #51cbee;
-}
-
-/* line 107, ../scss/_forms.scss */
-select {
-  -moz-appearance: none;
-  text-indent: 0.01px;
-  text-overflow: '';
-  padding: 6px;
-  background: linear-gradient(#ffffff 50%, #f5f5f5 100%);
-}
-
-/* line 116, ../scss/_forms.scss */
-.select label:after {
-  content: '\25be';
-  position: absolute;
-  right: 5px;
-  top: 34px;
-  font-size: 18px;
-  color: #999999;
-  pointer-events: none;
-  padding: 0 7px 2px;
-  background: linear-gradient(#ffffff 50%, #f5f5f5 100%);
-}
-
-/* line 130, ../scss/_forms.scss */
+/* line 1, ../scss/_buttons.scss */
 input[type=button], button, .button {
   display: inline-block;
   padding: 6px 12px;
@@ -240,447 +114,408 @@ input[type=button], button, .button {
   border-radius: 3px;
   white-space: nowrap;
   cursor: pointer;
-  -webkit-appearance: none;
   color: #333;
   background-color: #fff;
   border-color: #ccc;
 }
-/* line 153, ../scss/_forms.scss */
+/* line 23, ../scss/_buttons.scss */
 input[type=button]:active, input[type=button]:hover, input[type=button]:focus, button:active, button:hover, button:focus, .button:active, .button:hover, .button:focus {
   color: #333;
   background-color: #ebebeb;
   border-color: #adadad;
 }
-/* line 159, ../scss/_forms.scss */
+/* line 29, ../scss/_buttons.scss */
 input[type=button].primary, button.primary, .button.primary {
   background-color: #428bca;
   border-color: #357ebd;
 }
-/* line 163, ../scss/_forms.scss */
+/* line 33, ../scss/_buttons.scss */
 input[type=button].primary:active, input[type=button].primary:hover, input[type=button].primary:focus, button.primary:active, button.primary:hover, button.primary:focus, .button.primary:active, .button.primary:hover, .button.primary:focus {
   background-color: #3276b1;
   border-color: #285e8e;
 }
-/* line 168, ../scss/_forms.scss */
+/* line 39, ../scss/_buttons.scss */
 input[type=button].success, button.success, .button.success {
   background-color: #5cb85c;
   border-color: #378238;
 }
-/* line 172, ../scss/_forms.scss */
+/* line 43, ../scss/_buttons.scss */
 input[type=button].success:active, input[type=button].success:hover, input[type=button].success:focus, button.success:active, button.success:hover, button.success:focus, .button.success:active, .button.success:hover, .button.success:focus {
   background-color: #3276b1;
   border-color: #285e8e;
 }
-/* line 177, ../scss/_forms.scss */
+/* line 49, ../scss/_buttons.scss */
 input[type=button].warning, button.warning, .button.warning {
   background-color: #f0ad4e;
   border-color: #357ebd;
 }
-/* line 181, ../scss/_forms.scss */
+/* line 53, ../scss/_buttons.scss */
 input[type=button].warning:active, input[type=button].warning:hover, input[type=button].warning:focus, button.warning:active, button.warning:hover, button.warning:focus, .button.warning:active, .button.warning:hover, .button.warning:focus {
   background-color: #3276b1;
   border-color: #285e8e;
 }
-/* line 186, ../scss/_forms.scss */
+/* line 59, ../scss/_buttons.scss */
 input[type=button].error, button.error, .button.error {
   background-color: #d9534f;
   border-color: #357ebd;
 }
-/* line 190, ../scss/_forms.scss */
+/* line 63, ../scss/_buttons.scss */
 input[type=button].error:active, input[type=button].error:hover, input[type=button].error:focus, button.error:active, button.error:hover, button.error:focus, .button.error:active, .button.error:hover, .button.error:focus {
   background-color: #3276b1;
   border-color: #285e8e;
 }
 
-/*
- * Typography
- *
- *
- * Credits:
- * http://thesassway.com/advanced/modular-css-typography
- * http://www.onextrapixel.com/2011/05/30/how-to-create-great-web-typography-in-10-minutes/
- * http://coding.smashingmagazine.com/2011/03/14/technical-web-typography-guidelines-and-techniques/
- */
-/* line 11, ../scss/_typography.scss */
-.link, .typeset a {
-  color: #d54aaf;
-  text-decoration: none;
-}
-/* line 15, ../scss/_typography.scss */
-.link:visited, .typeset a:visited {
-  color: purple;
-}
-/* line 19, ../scss/_typography.scss */
-.link:hover, .typeset a:hover, .link:visited:hover, .typeset a:visited:hover {
-  color: #eb34b9;
-  text-decoration: underline;
+/* line 5, ../scss/_forms.scss */
+*, *:before, *:after {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: none;
 }
 
-/* line 25, ../scss/_typography.scss */
-.fixed, .typeset pre, .typeset code {
-  font-family: "Andale Mono", AndaleMono, monospace;
-  font-size: 16px;
-  line-height: 1.2;
+/* line 11, ../scss/_forms.scss */
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  background: white;
 }
 
-/* line 27, ../scss/_typography.scss */
-.quiet {
-  font-color: #cccccc;
+/* line 17, ../scss/_forms.scss */
+fieldset {
+  position: relative;
 }
 
-/* line 28, ../scss/_typography.scss */
-.loud, .bold, .typeset b, .typeset strong {
-  font-color: black;
+/* line 21, ../scss/_forms.scss */
+label {
+  display: block;
+  font-size: 14px;
+  padding: 2px;
+}
+/* line 25, ../scss/_forms.scss */
+label input, label select {
+  margin-top: .3em;
 }
 
-/* line 30, ../scss/_typography.scss */
-.italic, .typeset i, .typeset em {
-  font-style: italic;
+/* line 30, ../scss/_forms.scss */
+input[type=text], input[type=email], input[type=tel], textarea, select {
+  display: block;
+  width: 100%;
+  height: 35px;
+  padding: 5px 8px;
+  outline: 0;
+  border: 1px solid #999999;
+  border-radius: 3px;
+  font-size: 15px;
+  transition: all .25s;
 }
 
-/* line 31, ../scss/_typography.scss */
-.bold, .typeset b, .typeset strong {
-  font-weight: 700;
+/* line 46, ../scss/_forms.scss */
+textarea {
+  max-width: 100%;
+  height: auto;
 }
 
-/* line 33, ../scss/_typography.scss */
-.h1, .typeset h1, .h2, .typeset h2, .h3, .typeset h3, .h4, .typeset h4, .h5, .typeset h5, .h6, .typeset h6 {
+/* line 51, ../scss/_forms.scss */
+select {
+  text-indent: 0.01px;
+  text-overflow: '';
+  background: white linear-gradient(#ffffff 50%, #f5f5f5 100%);
+}
+/* line 55, ../scss/_forms.scss */
+select::-ms-expand {
+  display: none;
+}
+
+/* line 61, ../scss/_forms.scss */
+.select label:after {
+  content: '\25be';
+  position: absolute;
+  right: 14px;
+  top: 36px;
   font-family: "Open Sans", Verdana, Helvetica, sans-serif;
+  font-size: 18px;
+  color: #999999;
+  pointer-events: none;
+}
+/* line 73, ../scss/_forms.scss */
+.ie9 .select label:after {
+  content: '';
+}
+
+/* all browsers that support what we need, also support the :root pseudo-class */
+/* line 81, ../scss/_forms.scss */
+input[type=checkbox] + label, input[type=radio] + label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* line 91, ../scss/_forms.scss */
+:root input[type=checkbox] + label:before, :root input[type=radio] + label:before {
+  content: '';
+  display: inherit;
+  width: 16px;
+  height: 16px;
+  margin: 0 .5em 0 0;
+  border: 1px solid #999999;
+  font-size: inherit;
+  text-align: center;
+  line-height: 16px;
+  background: white linear-gradient(#ffffff 50%, #f5f5f5 100%);
+  vertical-align: middle;
+}
+/* line 121, ../scss/_forms.scss */
+:root input[type=checkbox] + label:before {
+  border-radius: 3px;
+}
+/* line 126, ../scss/_forms.scss */
+:root input[type=checkbox]:checked + label:before {
+  content: '\2714';
+}
+/* line 132, ../scss/_forms.scss */
+:root input[type=radio] + label {
+  display: block;
+}
+/* line 134, ../scss/_forms.scss */
+:root input[type=radio] + label:before {
+  display: inline-block;
+  border-radius: 50%;
+}
+/* line 140, ../scss/_forms.scss */
+:root input[type=radio]:checked + label:before {
+  content: '\25CF';
+  line-height: .8;
+}
+
+/*
+We'll mess with these later
+
+input:required {
+	border-color: $warning
+}
+input:valid {
+	border-color: $success
+}
+input:invalid {
+	border-color: $error
+}
+*/
+/*******************************
+HEADER TYPOGRAPHY
+********************************/
+/* line 35, ../scss/_typography.scss */
+.h1, .typeset h1, .h2, .typeset h2, .h3, .typeset h3, .h4, .typeset h4, .h5, .typeset h5, .h6, .typeset h6 {
   font-weight: 700;
-}
-
-/* line 36, ../scss/_typography.scss */
-.h1, .typeset h1 {
-  font-size: 61.55813px;
-  letter-spacing: -0.125rem;
-  line-height: 92.33719px;
-}
-
-/* line 37, ../scss/_typography.scss */
-.h2, .typeset h2 {
-  font-size: 46.12037px;
-  letter-spacing: -0.0625rem;
-  line-height: 69.18056px;
-}
-
-/* line 38, ../scss/_typography.scss */
-.h3, .typeset h3 {
-  font-size: 34.55415px;
-  line-height: 51.83122px;
-}
-
-/* line 39, ../scss/_typography.scss */
-.h4, .typeset h4 {
-  font-size: 28.50396px;
-  line-height: 42.75594px;
+  margin: 1.8rem 0 0.9rem;
 }
 
 /* line 40, ../scss/_typography.scss */
+.h1, .typeset h1 {
+  font-size: 4.74074rem;
+  line-height: 7.11111rem;
+}
+
+/* line 44, ../scss/_typography.scss */
+.h2, .typeset h2 {
+  font-size: 3.55556rem;
+  line-height: 5.33333rem;
+}
+
+/* line 48, ../scss/_typography.scss */
+.h3, .typeset h3 {
+  font-size: 2.66667rem;
+  line-height: 4rem;
+}
+
+/* line 52, ../scss/_typography.scss */
+.h4, .typeset h4 {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+/* line 56, ../scss/_typography.scss */
 .h5, .typeset h5 {
-  font-size: 23.51311px;
-  line-height: 35.26967px;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
 }
 
-/* line 41, ../scss/_typography.scss */
-.h6, .typeset h6 {
-  font-size: 19.39613px;
-  line-height: 29.09419px;
-}
-
-/* line 43, ../scss/_typography.scss */
-.block-margins, .typeset p, .typeset ul, .typeset ol, .typeset pre {
-  margin: 1em 0;
-}
-
-/* line 45, ../scss/_typography.scss */
-.unordered-list, .typeset ul {
-  list-style-type: disc;
-}
-
-/* line 46, ../scss/_typography.scss */
-.ordered-list, .typeset ol {
-  list-style: decimal;
-}
-
-/* line 51, ../scss/_typography.scss */
-.typeset {
-  /* Bettttter Links */
-}
-/* line 58, ../scss/_typography.scss */
-.typeset h1 {
-  margin: 1.6rem 0 0.8rem;
-}
-/* line 59, ../scss/_typography.scss */
-.typeset h2 {
-  margin: 1.6rem 0 0.8rem;
-}
 /* line 60, ../scss/_typography.scss */
-.typeset h3 {
-  margin: 1.6rem 0 0.8rem;
-}
-/* line 61, ../scss/_typography.scss */
-.typeset h4 {
-  margin: 1.6rem 0 0.8rem;
-}
-/* line 62, ../scss/_typography.scss */
-.typeset h5 {
-  margin: 1.6rem 0 0.8rem;
-}
-/* line 63, ../scss/_typography.scss */
-.typeset h6 {
-  margin: 1.6rem 0 0.8rem;
-}
-/* line 67, ../scss/_typography.scss */
-.typeset p {
+.h6, .typeset h6 {
   font-size: 1.125rem;
+  line-height: 1.6875rem;
 }
-/* line 72, ../scss/_typography.scss */
-.typeset p a {
-  margin: -.5em;
-  padding: .5em;
-  position: relative;
+
+/* line 75, ../scss/_typography.scss */
+p {
+  word-wrap: break-word;
 }
-/* line 80, ../scss/_typography.scss */
-.typeset ul ul {
-  margin: 0 0 0 25.6px;
+
+/* line 77, ../scss/_typography.scss */
+.indent {
+  text-indent: 1.25%;
 }
+
+/*******************************
+BODY TYPOGRAPHY & GRID CALC
+********************************/
 /* line 86, ../scss/_typography.scss */
-.typeset ol ol {
-  margin: 0 0 0 25.6px;
-}
-/* line 93, ../scss/_typography.scss */
-.typeset blockquote {
-  /* TO DO: calculate this margin from .col-1 dynamically */
-  margin: 0 5.833%;
-  border-left: 5px solid #ccc;
-  padding-left: 10px;
-  text-indent: -0.4em;
-}
-/* line 101, ../scss/_typography.scss */
-.typeset blockquote b {
-  display: block;
-  text-indent: 0;
-}
-
-/*
- * Modifiers
- */
-/* line 113, ../scss/_typography.scss */
-.float-left {
-  float: left;
-  margin-right: 1em;
-}
-
-/* line 114, ../scss/_typography.scss */
-.float-right {
-  float: right;
-  margin-left: 1em;
-}
-
-/* line 116, ../scss/_typography.scss */
-.text-left {
-  text-align: left   !important;
-}
-
-/* line 117, ../scss/_typography.scss */
-.text-center {
-  text-align: center !important;
-}
-
-/* line 118, ../scss/_typography.scss */
-.text-right {
-  text-align: right  !important;
-}
-
-/*
- * Object definitions
- */
-/* line 125, ../scss/_typography.scss */
-.content {
-  margin: 0 auto;
-  width: 32em;
-}
-
-/* line 130, ../scss/_typography.scss */
-.header-block {
-  font-size: 110%;
-}
-/* line 133, ../scss/_typography.scss */
-.header-block.typography h1 {
-  font-size: 450%;
-  margin-top: 0 !important;
-}
-
-/* line 136, ../scss/_typography.scss */
-.author-block {
-  border-top: 3px double #cccccc;
-  margin-top: 4em;
-}
-
-/* line 6, ../scss/_grid.scss */
-.full {
-  width: 100%;
-  overflow: auto;
-}
-
-/* line 12, ../scss/_grid.scss */
 .container {
   position: relative;
   max-width: 1140px;
   margin: 0 auto;
-  overflow: auto;
 }
 
-/* line 20, ../scss/_grid.scss */
+/* line 93, ../scss/_typography.scss */
 [class*="col-"] {
   position: relative;
   float: left;
-  overflow: auto;
   width: 97.5%;
   min-height: 1px;
   margin: 1.25%;
 }
-/* line 28, ../scss/_grid.scss */
+/* line 100, ../scss/_typography.scss */
 [class*="col-"] [class*="col-"] {
   margin: 1.25% 0;
 }
 
-@media only screen and (max-width: 1000px) {
-  /* line 36, ../scss/_grid.scss */
-  [class*="col-"] [class*="col-"] {
-    width: 100%;
-  }
+/* line 107, ../scss/_typography.scss */
+[class*="col-"] [class*="col-"] {
+  margin: 0 1.25% 0;
 }
-@media only screen and (min-width: 1005px) {
-  /* line 44, ../scss/_grid.scss */
-  [class*="col-"] [class*="col-"] {
-    margin: 0 1.25% 0;
-  }
 
-  /* line 54, ../scss/_grid.scss */
-  .col-1 {
-    width: 5.83333%;
-  }
-
-  /* line 59, ../scss/_grid.scss */
-  .collapse .col-1 {
-    width: 8.33333%;
-  }
-
-  /* line 54, ../scss/_grid.scss */
-  .col-2 {
-    width: 14.16667%;
-  }
-
-  /* line 59, ../scss/_grid.scss */
-  .collapse .col-2 {
-    width: 16.66667%;
-  }
-
-  /* line 54, ../scss/_grid.scss */
-  .col-3 {
-    width: 22.5%;
-  }
-
-  /* line 59, ../scss/_grid.scss */
-  .collapse .col-3 {
-    width: 25%;
-  }
-
-  /* line 54, ../scss/_grid.scss */
-  .col-4 {
-    width: 30.83333%;
-  }
-
-  /* line 59, ../scss/_grid.scss */
-  .collapse .col-4 {
-    width: 33.33333%;
-  }
-
-  /* line 54, ../scss/_grid.scss */
-  .col-5 {
-    width: 39.16667%;
-  }
-
-  /* line 59, ../scss/_grid.scss */
-  .collapse .col-5 {
-    width: 41.66667%;
-  }
-
-  /* line 54, ../scss/_grid.scss */
-  .col-6 {
-    width: 47.5%;
-  }
-
-  /* line 59, ../scss/_grid.scss */
-  .collapse .col-6 {
-    width: 50%;
-  }
-
-  /* line 54, ../scss/_grid.scss */
-  .col-7 {
-    width: 55.83333%;
-  }
-
-  /* line 59, ../scss/_grid.scss */
-  .collapse .col-7 {
-    width: 58.33333%;
-  }
-
-  /* line 54, ../scss/_grid.scss */
-  .col-8 {
-    width: 64.16667%;
-  }
-
-  /* line 59, ../scss/_grid.scss */
-  .collapse .col-8 {
-    width: 66.66667%;
-  }
-
-  /* line 54, ../scss/_grid.scss */
-  .col-9 {
-    width: 72.5%;
-  }
-
-  /* line 59, ../scss/_grid.scss */
-  .collapse .col-9 {
-    width: 75%;
-  }
-
-  /* line 54, ../scss/_grid.scss */
-  .col-10 {
-    width: 80.83333%;
-  }
-
-  /* line 59, ../scss/_grid.scss */
-  .collapse .col-10 {
-    width: 83.33333%;
-  }
-
-  /* line 54, ../scss/_grid.scss */
-  .col-11 {
-    width: 89.16667%;
-  }
-
-  /* line 59, ../scss/_grid.scss */
-  .collapse .col-11 {
-    width: 91.66667%;
-  }
-
-  /* line 54, ../scss/_grid.scss */
-  .col-12 {
-    width: 97.5%;
-  }
-
-  /* line 59, ../scss/_grid.scss */
-  .collapse .col-12 {
-    width: 100%;
-  }
+/* line 120, ../scss/_typography.scss */
+.col-1 {
+  width: 5.83333%;
+  line-height: 24px;
 }
+
+/* line 126, ../scss/_typography.scss */
+.collapse .col-1 {
+  width: 8.33333%;
+}
+
+/* line 120, ../scss/_typography.scss */
+.col-2 {
+  width: 14.16667%;
+  line-height: 25px;
+}
+
+/* line 126, ../scss/_typography.scss */
+.collapse .col-2 {
+  width: 16.66667%;
+}
+
+/* line 120, ../scss/_typography.scss */
+.col-3 {
+  width: 22.5%;
+  line-height: 25px;
+}
+
+/* line 126, ../scss/_typography.scss */
+.collapse .col-3 {
+  width: 25%;
+}
+
+/* line 120, ../scss/_typography.scss */
+.col-4 {
+  width: 30.83333%;
+  line-height: 26px;
+}
+
+/* line 126, ../scss/_typography.scss */
+.collapse .col-4 {
+  width: 33.33333%;
+}
+
+/* line 120, ../scss/_typography.scss */
+.col-5 {
+  width: 39.16667%;
+  line-height: 26px;
+}
+
+/* line 126, ../scss/_typography.scss */
+.collapse .col-5 {
+  width: 41.66667%;
+}
+
+/* line 120, ../scss/_typography.scss */
+.col-6 {
+  width: 47.5%;
+  line-height: 27px;
+}
+
+/* line 126, ../scss/_typography.scss */
+.collapse .col-6 {
+  width: 50%;
+}
+
+/* line 120, ../scss/_typography.scss */
+.col-7 {
+  width: 55.83333%;
+  line-height: 28px;
+}
+
+/* line 126, ../scss/_typography.scss */
+.collapse .col-7 {
+  width: 58.33333%;
+}
+
+/* line 120, ../scss/_typography.scss */
+.col-8 {
+  width: 64.16667%;
+  line-height: 28px;
+}
+
+/* line 126, ../scss/_typography.scss */
+.collapse .col-8 {
+  width: 66.66667%;
+}
+
+/* line 120, ../scss/_typography.scss */
+.col-9 {
+  width: 72.5%;
+  line-height: 29px;
+}
+
+/* line 126, ../scss/_typography.scss */
+.collapse .col-9 {
+  width: 75%;
+}
+
+/* line 120, ../scss/_typography.scss */
+.col-10 {
+  width: 80.83333%;
+  line-height: 30px;
+}
+
+/* line 126, ../scss/_typography.scss */
+.collapse .col-10 {
+  width: 83.33333%;
+}
+
+/* line 120, ../scss/_typography.scss */
+.col-11 {
+  width: 89.16667%;
+  line-height: 30px;
+}
+
+/* line 126, ../scss/_typography.scss */
+.collapse .col-11 {
+  width: 91.66667%;
+}
+
+/* line 120, ../scss/_typography.scss */
+.col-12 {
+  width: 97.5%;
+  line-height: 31px;
+}
+
+/* line 126, ../scss/_typography.scss */
+.collapse .col-12 {
+  width: 100%;
+}
+
 /* line 1, ../scss/_style-guide.scss */
 [class*="col-"] {
   min-height: 35px;
-  background: #eeeeee;
 }
 
 /* line 6, ../scss/_style-guide.scss */
@@ -782,29 +617,35 @@ input[type=button].error:active, input[type=button].error:hover, input[type=butt
   background: #d62c1a;
 }
 
-/* line 27, ../scss/app.scss */
+/* line 28, ../scss/app.scss */
 .show {
   display: block !important;
 }
 
-/* line 31, ../scss/app.scss */
+/* line 32, ../scss/app.scss */
 .hide {
   display: none !important;
 }
 
-/* line 35, ../scss/app.scss */
+/* line 36, ../scss/app.scss */
 .hidden {
   display: none !important;
   visibility: hidden !important;
 }
 
-/* line 40, ../scss/app.scss */
+/* line 41, ../scss/app.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 44, ../scss/app.scss */
-.screen-reader-text {
+/* line 45, ../scss/app.scss */
+.focus, input[type=text]:focus, input[type=email]:focus, input[type=tel]:focus, textarea:focus, select:focus, :root input[type=checkbox]:focus + label:before, :root input[type=radio]:focus + label:before {
+  border-color: #66afe9;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.075), 0 0 2px rgba(102, 175, 233, 0.6);
+}
+
+/* line 50, ../scss/app.scss */
+.screen-reader-text, :root input[type=checkbox], :root input[type=radio] {
   position: absolute;
   margin: -1px;
   padding: 0;
@@ -815,61 +656,56 @@ input[type=button].error:active, input[type=button].error:hover, input[type=butt
   border: 0;
 }
 
-/* line 55, ../scss/app.scss */
+/* line 61, ../scss/app.scss */
 body {
   color: #333333;
-  font-size: 16px;
+  font-size: 18;
   font-family: "Open Sans", Verdana, Helvetica, sans-serif;
   font-weight: normal;
-  line-height: 25.6px;
+  line-height: 28.8px;
 }
 
 /* apply a natural box layout model to all elements */
-/* line 64, ../scss/app.scss */
+/* line 70, ../scss/app.scss */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 70, ../scss/app.scss */
+/* line 76, ../scss/app.scss */
 .pagination {
   text-align: center;
 }
-/* line 72, ../scss/app.scss */
+/* line 78, ../scss/app.scss */
 .pagination li {
   display: inline-block;
   margin: 0 18px;
 }
-/* line 76, ../scss/app.scss */
+/* line 82, ../scss/app.scss */
 .pagination .prev:before {
   content: '\25c0';
 }
-/* line 79, ../scss/app.scss */
+/* line 85, ../scss/app.scss */
 .pagination .next:after {
   content: "\25b6";
 }
 
-/* line 84, ../scss/app.scss */
+/* line 90, ../scss/app.scss */
 .read-more {
   display: block;
 }
-/* line 86, ../scss/app.scss */
+/* line 92, ../scss/app.scss */
 .read-more:after {
   content: '\2192';
 }
 
-/* line 91, ../scss/app.scss */
-.disabled {
-  cursor: not-allowed;
-}
-
-/* line 95, ../scss/app.scss */
+/* line 97, ../scss/app.scss */
 li {
   list-style: none;
 }
 
-/* line 99, ../scss/app.scss */
+/* line 101, ../scss/app.scss */
 .progress {
   display: block;
   position: relative;
@@ -877,7 +713,7 @@ li {
   height: 8px;
   background: #E4E7E7;
 }
-/* line 105, ../scss/app.scss */
+/* line 107, ../scss/app.scss */
 .progress:after {
   content: '';
   display: block;
@@ -888,22 +724,22 @@ li {
 }
 
 /* calculate progress bar */
-/* line 122, ../scss/app.scss */
+/* line 124, ../scss/app.scss */
 [data-progress='1']:after {
   width: 25%;
 }
 
-/* line 122, ../scss/app.scss */
+/* line 124, ../scss/app.scss */
 [data-progress='2']:after {
   width: 50%;
 }
 
-/* line 122, ../scss/app.scss */
+/* line 124, ../scss/app.scss */
 [data-progress='3']:after {
   width: 75%;
 }
 
-/* line 122, ../scss/app.scss */
+/* line 124, ../scss/app.scss */
 [data-progress='4']:after {
   width: 100%;
 }
