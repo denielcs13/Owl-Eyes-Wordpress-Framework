@@ -4,4 +4,5 @@
 	<?php echo '<time datetime="'. get_the_time('c') .'">'. get_the_time('F jS, Y') .'</time>'; ?>
 	<?php the_category(', ') ?>
 	<?php echo $OE->comment_count(); ?>
+	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
 </div>

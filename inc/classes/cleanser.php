@@ -19,9 +19,6 @@ class OE_Cleanser {
 		// cleanup all injected css
 		add_action('init', array( $this, 'css_cleanup' ));
 		
-		// cleanup how imgages are handled
-		add_action('init', array( $this, 'img_cleanup' ));
-		
 	}
 	
 	/**
@@ -119,46 +116,6 @@ class OE_Cleanser {
 		});
 		
 	}
-	
-	
-	/**
-	 * Clean up how Wordpress handles images.
-	 * 
-	 * @access public
-	 * @return void
-	 */
-	function img_cleanup() {
-		
-		// remove image size attributes
-		add_filter( 'post_thumbnail_html', array( $this, 'remove_size_attributes' ), 10 );
-		add_filter( 'image_send_to_editor', array( $this, 'remove_size_attributes' ), 10 );
-		
-		// clean up img tag classes
-		add_filter('get_image_tag_class', function($class, $id, $align, $size) {
-		
-			return 'align' . esc_attr($align);	
-		}, 0, 4);
-		
-		// remove p tag from images & use a figure tag cause we like HTML5 :)
-		add_filter( 'the_content', function($pee) {
-		    $pee = preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '<figure>$1</figure>', $pee);
-		    return $pee;
-		}, 30);
-		
-	}
-		
-	/**
-	 * Remove Image Width & Height Attributes.
-	 * 
-	 * @access public
-	 * @param mixed $html
-	 * @return void
-	 */
-	function remove_size_attributes( $html ) {
-		
-		return preg_replace( '/(width|height)=\"\d*\"\s/', '', $html );
-	}
-	
 }
 
 $oe_clean = new OE_Cleanser;

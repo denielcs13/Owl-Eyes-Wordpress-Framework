@@ -77,6 +77,15 @@ select {
 
 /* all browsers that support what we need, also support the :root pseudo-class */
 
+.checkbox, .radio {
+	ul {
+		margin: 0;
+	}
+	li {
+		list-style: none;
+	}
+}
+
 input[type=checkbox], input[type=radio] {
 	+ label {
 		display: inline-block;

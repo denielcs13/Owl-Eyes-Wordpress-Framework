@@ -1,0 +1,9 @@
+img {
+	max-width: 100%;
+	height: auto;
+	outline: lightgrey 1px solid;
+	a & {
+		padding: 0;
+		border: none;
+	}
+}

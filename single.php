@@ -26,8 +26,8 @@ if ($pages) {
 ?>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class('typeset'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="container">
+<article id="post-<?php the_ID(); ?>" <?php post_class('typeset col-7'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 	
 	<header class="post-header">
 		<h1 class="heading" itemprop="headline"><?php the_title(); ?></h1>
@@ -38,6 +38,7 @@ if ($pages) {
 	<section class="post-content" itemprop="articleBody">
 		<?php the_post_thumbnail('post-thumbnail', array('itemprop'=>'image')); ?>
 		<?php the_content(); ?>
+		<?php the_post_thumbnail_caption(); ?>
 	</section>
 	
 	<footer class="post-footer">
@@ -54,5 +55,5 @@ if ($pages) {
 <p class="no-post"><?php _e( 'Sorry post could not be found.', 'origin' ); ?></p>
 
 <?php endif; ?>
-
+</div>
 <?php get_footer(); ?>

@@ -104,12 +104,12 @@ a {
 	text-decoration: none;
 	border-bottom: .07em solid rgba(0, 0, 0, .2);
 	padding-bottom: .07em;
-	color: #0B92F6;
+	color: $info;
 	&:link {
     	-webkit-tap-highlight-color: rgba(229,59,44,.4);
 	}
 	&:hover {
-    	border-bottom: .07em solid #0B92F6;
+    	border-bottom: .07em solid $info;
 	}
 }
 
@@ -249,9 +249,9 @@ dt {
  HELPERS
 *****************************/
 
-.text-left { text-align: left; }
-.text-center { text-align: left; }
-.text-right { text-align: left; }
+.text-left, .alignleft { text-align: left; }
+.text-center, .aligncenter { text-align: center; }
+.text-right, .alignright { text-align: right; }
 .text-justify { text-align: justify; }
 .indent { text-indent: percentage($margin/100); }
 .list-inline { display: inline-block; }

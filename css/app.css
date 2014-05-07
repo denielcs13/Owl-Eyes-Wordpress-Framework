@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 /*------------------------------------------------------------------
 [Master Stylesheet]
 
@@ -9,27 +10,8 @@ Last change: 03/30/14
 /* Config */
 /* These functions define ranges for various things, like media queries */
 /* Calculate REM from interger or px */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
-/* line 1, ../scss/_extends.scss */
-.unselectable, input[type=button], button, .button {
-  user-select: none;
-}
-
-/* line 5, ../scss/_extends.scss */
-.disabled, :root input[type=checkbox]:disabled + label:before, :root input[type=radio]:disabled + label:before, :root input[type=checkbox]:checked:disabled + label:before, :root input[type=radio]:checked:disabled + label:before, input[disabled], input[readonly], input[disabled] + label, input[readonly] + label {
-  cursor: not-allowed;
-  pointer-events: none;
-  opacity: .6;
-  filter: alpha(opacity=60);
-}
-
-/* line 13, ../scss/_extends.scss */
-.white, input[type=button].primary, button.primary, .button.primary, input[type=button].success, button.success, .button.success, input[type=button].warning, button.warning, .button.warning, input[type=button].error, button.error, .button.error {
-  color: #fff;
-}
-
 /* The following was adopted from the Foundation framework */
-/* line 5, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -51,46 +33,46 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+/* line 116, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
@@ -101,6 +83,30 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /*
  * Typography
  */
+/* line 1, ../scss/_extends.scss */
+.unselectable, input[type=button], button, .button {
+  user-select: none;
+}
+
+/* line 5, ../scss/_extends.scss */
+.disabled, :root input[type=checkbox]:disabled + label:before, :root input[type=radio]:disabled + label:before, :root input[type=checkbox]:checked:disabled + label:before, :root input[type=radio]:checked:disabled + label:before, input[disabled], input[readonly], input[disabled] + label, input[readonly] + label {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: .6;
+  filter: alpha(opacity=60);
+}
+
+/* line 13, ../scss/_extends.scss */
+.white, input[type=button].primary, button.primary, .button.primary, input[type=button].success, button.success, .button.success, input[type=button].warning, button.warning, .button.warning, input[type=button].error, button.error, .button.error {
+  color: #fff;
+}
+
+/* line 17, ../scss/_extends.scss */
+.focus, input[type=text]:focus, input[type=email]:focus, input[type=tel]:focus, textarea:focus, select:focus, :root input[type=checkbox]:focus + label:before, :root input[type=radio]:focus + label:before {
+  border-color: #0b92f6;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.075), 0 0 2px rgba(102, 175, 233, 0.6);
+}
+
 /* line 1, ../scss/_buttons.scss */
 input[type=button], button, .button {
   display: inline-block;
@@ -244,12 +250,21 @@ select::-ms-expand {
 
 /* all browsers that support what we need, also support the :root pseudo-class */
 /* line 81, ../scss/_forms.scss */
+.checkbox ul, .radio ul {
+  margin: 0;
+}
+/* line 84, ../scss/_forms.scss */
+.checkbox li, .radio li {
+  list-style: none;
+}
+
+/* line 90, ../scss/_forms.scss */
 input[type=checkbox] + label, input[type=radio] + label {
   display: inline-block;
   cursor: pointer;
 }
 
-/* line 91, ../scss/_forms.scss */
+/* line 100, ../scss/_forms.scss */
 :root input[type=checkbox] + label:before, :root input[type=radio] + label:before {
   content: '';
   display: inherit;
@@ -263,24 +278,24 @@ input[type=checkbox] + label, input[type=radio] + label {
   background: white linear-gradient(#ffffff 50%, #f5f5f5 100%);
   vertical-align: middle;
 }
-/* line 121, ../scss/_forms.scss */
+/* line 130, ../scss/_forms.scss */
 :root input[type=checkbox] + label:before {
   border-radius: 3px;
 }
-/* line 126, ../scss/_forms.scss */
+/* line 135, ../scss/_forms.scss */
 :root input[type=checkbox]:checked + label:before {
   content: '\2714';
 }
-/* line 132, ../scss/_forms.scss */
+/* line 141, ../scss/_forms.scss */
 :root input[type=radio] + label {
   display: block;
 }
-/* line 134, ../scss/_forms.scss */
+/* line 143, ../scss/_forms.scss */
 :root input[type=radio] + label:before {
   display: inline-block;
   border-radius: 50%;
 }
-/* line 140, ../scss/_forms.scss */
+/* line 149, ../scss/_forms.scss */
 :root input[type=radio]:checked + label:before {
   content: '\25CF';
   line-height: .8;
@@ -384,7 +399,7 @@ a {
   text-decoration: none;
   border-bottom: 0.07em solid rgba(0, 0, 0, 0.2);
   padding-bottom: .07em;
-  color: #0B92F6;
+  color: #0b92f6;
 }
 /* line 108, ../scss/_typography.scss */
 a:link {
@@ -392,7 +407,7 @@ a:link {
 }
 /* line 111, ../scss/_typography.scss */
 a:hover {
-  border-bottom: .07em solid #0B92F6;
+  border-bottom: 0.07em solid #0b92f6;
 }
 
 /****************************
@@ -537,18 +552,18 @@ dt {
  HELPERS
 *****************************/
 /* line 252, ../scss/_typography.scss */
-.text-left {
+.text-left, .alignleft {
   text-align: left;
 }
 
 /* line 253, ../scss/_typography.scss */
-.text-center {
-  text-align: left;
+.text-center, .aligncenter {
+  text-align: center;
 }
 
 /* line 254, ../scss/_typography.scss */
-.text-right {
-  text-align: left;
+.text-right, .alignright {
+  text-align: right;
 }
 
 /* line 255, ../scss/_typography.scss */
@@ -745,6 +760,18 @@ CALCULATE GRID
     }
 }
 */
+/* line 1, ../scss/_images.scss */
+img {
+  max-width: 100%;
+  height: auto;
+  outline: lightgrey 1px solid;
+}
+/* line 5, ../scss/_images.scss */
+a img {
+  padding: 0;
+  border: none;
+}
+
 /* line 1, ../scss/_style-guide.scss */
 [class*="col-"] {
   min-height: 35px;
@@ -849,34 +876,28 @@ CALCULATE GRID
   background: #d62c1a;
 }
 
-/* line 28, ../scss/app.scss */
+/* line 29, ../scss/app.scss */
 .show {
   display: block !important;
 }
 
-/* line 32, ../scss/app.scss */
+/* line 33, ../scss/app.scss */
 .hide {
   display: none !important;
 }
 
-/* line 36, ../scss/app.scss */
+/* line 37, ../scss/app.scss */
 .hidden {
   display: none !important;
   visibility: hidden !important;
 }
 
-/* line 41, ../scss/app.scss */
+/* line 42, ../scss/app.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 45, ../scss/app.scss */
-.focus, input[type=text]:focus, input[type=email]:focus, input[type=tel]:focus, textarea:focus, select:focus, :root input[type=checkbox]:focus + label:before, :root input[type=radio]:focus + label:before {
-  border-color: #66afe9;
-  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.075), 0 0 2px rgba(102, 175, 233, 0.6);
-}
-
-/* line 50, ../scss/app.scss */
+/* line 46, ../scss/app.scss */
 .screen-reader-text, :root input[type=checkbox], :root input[type=radio] {
   position: absolute;
   margin: -1px;
@@ -888,7 +909,7 @@ CALCULATE GRID
   border: 0;
 }
 
-/* line 61, ../scss/app.scss */
+/* line 57, ../scss/app.scss */
 body {
   color: #333333;
   font-size: 18px;
@@ -898,46 +919,46 @@ body {
 }
 
 /* apply a natural box layout model to all elements */
-/* line 70, ../scss/app.scss */
+/* line 66, ../scss/app.scss */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 76, ../scss/app.scss */
+/* line 72, ../scss/app.scss */
 .pagination {
   text-align: center;
 }
-/* line 78, ../scss/app.scss */
+/* line 74, ../scss/app.scss */
 .pagination li {
   display: inline-block;
   margin: 0 18px;
 }
-/* line 82, ../scss/app.scss */
+/* line 78, ../scss/app.scss */
 .pagination .prev:before {
   content: '\25c0';
 }
-/* line 85, ../scss/app.scss */
+/* line 81, ../scss/app.scss */
 .pagination .next:after {
   content: "\25b6";
 }
 
-/* line 90, ../scss/app.scss */
+/* line 86, ../scss/app.scss */
 .read-more {
   display: block;
 }
-/* line 92, ../scss/app.scss */
+/* line 88, ../scss/app.scss */
 .read-more:after {
   content: '\2192';
 }
 
-/* line 97, ../scss/app.scss */
+/* line 93, ../scss/app.scss */
 li {
   list-style: none;
 }
 
-/* line 101, ../scss/app.scss */
+/* line 97, ../scss/app.scss */
 .progress {
   display: block;
   position: relative;
@@ -945,7 +966,7 @@ li {
   height: 8px;
   background: #E4E7E7;
 }
-/* line 107, ../scss/app.scss */
+/* line 103, ../scss/app.scss */
 .progress:after {
   content: '';
   display: block;
@@ -956,22 +977,22 @@ li {
 }
 
 /* calculate progress bar */
-/* line 124, ../scss/app.scss */
+/* line 120, ../scss/app.scss */
 [data-progress='1']:after {
   width: 25%;
 }
 
-/* line 124, ../scss/app.scss */
+/* line 120, ../scss/app.scss */
 [data-progress='2']:after {
   width: 50%;
 }
 
-/* line 124, ../scss/app.scss */
+/* line 120, ../scss/app.scss */
 [data-progress='3']:after {
   width: 75%;
 }
 
-/* line 124, ../scss/app.scss */
+/* line 120, ../scss/app.scss */
 [data-progress='4']:after {
   width: 100%;
 }

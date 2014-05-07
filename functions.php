@@ -9,6 +9,7 @@ $includes_path = TEMPLATEPATH . '/inc/';
 include ($includes_path . '/classes/cleanser.php');
 include ($includes_path . '/classes/custom.php');
 //include ($includes_path . '/classes/walkers.php');
+include ($includes_path . '/classes/images.php');
 
 // Add Menus
 if ( function_exists( 'register_nav_menus' ) ) {

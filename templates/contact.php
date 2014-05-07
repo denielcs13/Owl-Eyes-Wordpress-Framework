@@ -65,7 +65,7 @@
 			<input type="text" pattern="\d*" maxlength="10">
 		</label>
 	</div>
-	<div class="field col-12">
+	<div class="checkbox col-12">
 		<label>How would you like to stay involved?</label>
 		<ul>
 			<li>
