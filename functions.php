@@ -55,7 +55,7 @@ add_action( 'wp_enqueue_scripts', 'oe_enqueue_scripts' );
 
 // Register Google Web Fonts
 function load_fonts() {
-	wp_register_style( 'googlefonts', ('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Bree+Serif'));
+	wp_register_style( 'googlefonts', ('http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Bree+Serif'));
 	wp_enqueue_style( 'googlefonts' );
 }
 add_action( 'wp_enqueue_scripts', 'load_fonts' );

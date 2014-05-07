@@ -20,7 +20,7 @@ $ie: false;
 @import "buttons";
 @import "forms";
 @import "typography";
-//@import "grid";
+@import "grid";
 
 // for development purposes only, should be commented out in production environment
 @import "style-guide";
@@ -60,7 +60,7 @@ $ie: false;
 
 body {
   color: $text-color;
-  font-size: $base-font-size;
+  font-size: $base-font-size + px;
   font-family: $base-font-family;
   font-weight: $base-font-weight;
   line-height: $base-line-height + px;

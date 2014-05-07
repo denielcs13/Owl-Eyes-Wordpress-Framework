@@ -18,7 +18,7 @@ $margin: 1.25 !default;
 $class-slug: col !default;
 
 $base: $base-font-size;
-$scale: 3/4;
+$scale: 4/5; // for a list of more scales refer to: http://modularscale.com/
 
 $h6: $base;
 $h5: $base/$scale;
@@ -33,7 +33,7 @@ HEADER TYPOGRAPHY
 
 // according to Tim Brown (Typekit) our base-line-height is our magic number, so lets do some calculations with it!
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-weight: 700;
+  font-weight: 600;
   margin: rem($base_line_height) 0 rem($base_line_height/2);
 }
 
@@ -62,71 +62,203 @@ HEADER TYPOGRAPHY
   line-height: rem($h6 * 1.5);
 }
 
-.typeset {
+.block-margins { margin: 1em 0; }
+
+.quotes { content: '\2014 \00A0'; }
+
+.small { font-size: 75%; }
+
+/* .typeset { */
 	
-	h1 { @extend .h1; }
-	h2 { @extend .h2; }
-	h3 { @extend .h3; }
-	h4 { @extend .h4; }
-	h5 { @extend .h5; }
-	h6 { @extend .h6; }
-}
+/****************************
+ HEADINGS
+*****************************/
 
-p { word-wrap: break-word; }
+h1 { @extend .h1; }
+h2 { @extend .h2; }
+h3 { @extend .h3; }
+h4 { @extend .h4; }
+h5 { @extend .h5; }
+h6 { @extend .h6; }
 
-.indent {
-  text-indent: percentage($margin/100);
-}
-
-/*******************************
-BODY TYPOGRAPHY & GRID CALC
-********************************/
-
-// used for centered content
-.container {
-	position: relative;
-	max-width: $content-width + px;
-	margin: 0 auto;
-}
-
-// the base of our columns class
-[class*="#{$class-slug}-"] {
-	position: relative;
-	float: left;
-	width: 97.5%;
-	min-height: 1px;
-	margin: percentage($margin/100);
-	
-	[class*="col-"] {
-		margin: percentage($margin/100) 0;
+/* sub-headings */
+h1, h2, h3, h4, h5, h6 {
+	small {
+		font-weight: 400;
+		line-height: 1rem;
+		color: $gray-light;
 	}
 }
 
-@mixin calculate-grid() { 
-	[class*="col-"] {
-		[class*="col-"] {
-			margin: 0 percentage($margin/100) 0;
+/****************************
+ BODY COPY
+*****************************/
+
+p, ul, ol, dl, pre { @extend .block-margins; }
+
+p {
+	word-wrap: break-word;
+}
+
+a {
+	text-decoration: none;
+	border-bottom: .07em solid rgba(0, 0, 0, .2);
+	padding-bottom: .07em;
+	color: #0B92F6;
+	&:link {
+    	-webkit-tap-highlight-color: rgba(229,59,44,.4);
+	}
+	&:hover {
+    	border-bottom: .07em solid #0B92F6;
+	}
+}
+
+/****************************
+ EMPHASIS
+*****************************/
+
+/* for text we want to stand out, possibly at the beginning of an article */
+.lead {
+	@extend .h4;
+	font-weight: 300;
+}
+
+i, cite, em, var, address, dfn {
+	font-style: italic;
+}
+
+strong, b {
+	font-weight: 700;
+}
+
+small {
+	@extend .small;
+}
+
+/****************************
+ BLOCKQUOTES
+*****************************/
+
+/* adopted from http://html5doctor.com/blockquote-q-cite/ */
+q {
+	quotes: '“' '”' '‘' '’';
+	&:before {
+		content: '“'; content: open-quote;
+	}
+	&:after {
+		content: '”'; content: close-quote;
+	}
+	q {
+		&:before {
+			content: '‘'; content: open-quote;
+		}
+		&:after {
+			content: '’'; content: close-quote;
 		}
 	}
+}
 
-	// lets iterate through each column and create a class for it
-	@for $i from 1 through $columns {
-		
-		$gw: $i / ($columns/100);
-		$rw: $gw - $margin/100 * 2;
-		$px_width: ($rw/100)*$content-width;
-		$px_margin: ($margin/100) * $content-width;
-		
-		.#{$class-slug}-#{$i} {
-			width: $gw - percentage($margin/100) * 2;
-			line-height: gr($px_width - $px_margin*2) + px;
+blockquote {
+	quotes: '“' '”';
+	padding: rem($base_line_height/2);
+	padding-left: 2rem;
+	margin: rem($base_line_height) 0 rem($base_line_height/2) -2rem;
+	border: 1px solid $gray-lighter;
+	border-left-width: 3px;
+	border-radius: 3px;
+	text-indent: -0.4rem;
+	p {
+		&:first-child {
+			margin-top: 0;
 		}
-		
-		.collapse {
-			.#{$class-slug}-#{$i} {
-				width: $gw * 1%;
+		&:before {
+			content: '“'; content: open-quote;
+		}
+		&:after {
+			content: ''; content: no-close-quote;
+		}
+		&:last-child:after {
+			content: '”'; content: close-quote;
+		}
+	}
+	q {
+		&:before {
+			content: '‘'; content: open-quote;
+		}
+		&:after {
+			content: '’'; content: close-quote;
+		}
+		q {
+			&:before {
+				content: '“'; content: open-quote;
+			}
+			&:after {
+				content: '”'; content: close-quote;
 			}
 		}
 	}
+	footer {
+		@extend .small;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		text-indent: 0;
+		color: $gray-light;
+		&:before {
+			@extend .quotes;
+		}
+	}
+	small {
+		&:before {
+			@extend .quotes;
+		}
+	}
 }
-@include calculate-grid;
+
+/****************************
+ LISTS
+*****************************/
+
+ol, ul {
+	margin-left: 1.9rem;
+	ol, ul {
+		margin-left: 1.7rem;
+	}
+}
+
+ol {
+	li {
+		list-style-type: decimal;
+	}
+}
+
+ul {
+	li {
+		list-style-type: disc;
+		li {
+			list-style-type: circle;
+		}
+	}
+}
+
+dt {
+	font-weight: 700;
+}
+
+/****************************
+ HELPERS
+*****************************/
+
+.text-left { text-align: left; }
+.text-center { text-align: left; }
+.text-right { text-align: left; }
+.text-justify { text-align: justify; }
+.indent { text-indent: percentage($margin/100); }
+.list-inline { display: inline-block; }
+.list-unstyled {
+	margin-left: 0;
+	> li {
+		list-style: none;
+	}
+}
+/* } */

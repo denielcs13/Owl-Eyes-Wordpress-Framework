@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*------------------------------------------------------------------
 [Master Stylesheet]
 
@@ -302,68 +303,290 @@ input:invalid {
 HEADER TYPOGRAPHY
 ********************************/
 /* line 35, ../scss/_typography.scss */
-.h1, .typeset h1, .h2, .typeset h2, .h3, .typeset h3, .h4, .typeset h4, .h5, .typeset h5, .h6, .typeset h6 {
-  font-weight: 700;
+.h1, h1, .h2, h2, .h3, h3, .h4, h4, .lead, .h5, h5, .h6, h6 {
+  font-weight: 600;
   margin: 1.8rem 0 0.9rem;
 }
 
 /* line 40, ../scss/_typography.scss */
-.h1, .typeset h1 {
-  font-size: 4.74074rem;
-  line-height: 7.11111rem;
+.h1, h1 {
+  font-size: 3.43323rem;
+  line-height: 5.14984rem;
 }
 
 /* line 44, ../scss/_typography.scss */
-.h2, .typeset h2 {
-  font-size: 3.55556rem;
-  line-height: 5.33333rem;
+.h2, h2 {
+  font-size: 2.74658rem;
+  line-height: 4.11987rem;
 }
 
 /* line 48, ../scss/_typography.scss */
-.h3, .typeset h3 {
-  font-size: 2.66667rem;
-  line-height: 4rem;
+.h3, h3 {
+  font-size: 2.19727rem;
+  line-height: 3.2959rem;
 }
 
 /* line 52, ../scss/_typography.scss */
-.h4, .typeset h4 {
-  font-size: 2rem;
-  line-height: 3rem;
+.h4, h4, .lead {
+  font-size: 1.75781rem;
+  line-height: 2.63672rem;
 }
 
 /* line 56, ../scss/_typography.scss */
-.h5, .typeset h5 {
-  font-size: 1.5rem;
-  line-height: 2.25rem;
+.h5, h5 {
+  font-size: 1.40625rem;
+  line-height: 2.10938rem;
 }
 
 /* line 60, ../scss/_typography.scss */
-.h6, .typeset h6 {
+.h6, h6 {
   font-size: 1.125rem;
   line-height: 1.6875rem;
 }
 
-/* line 75, ../scss/_typography.scss */
+/* line 65, ../scss/_typography.scss */
+.block-margins, p, ul, ol, dl, pre {
+  margin: 1em 0;
+}
+
+/* line 67, ../scss/_typography.scss */
+.quotes, blockquote footer:before, blockquote small:before {
+  content: '\2014 \00A0';
+}
+
+/* line 69, ../scss/_typography.scss */
+.small, small, blockquote footer {
+  font-size: 75%;
+}
+
+/* .typeset { */
+/****************************
+ HEADINGS
+*****************************/
+/* sub-headings */
+/* line 86, ../scss/_typography.scss */
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+  font-weight: 400;
+  line-height: 1rem;
+  color: #999999;
+}
+
+/****************************
+ BODY COPY
+*****************************/
+/* line 99, ../scss/_typography.scss */
 p {
   word-wrap: break-word;
 }
 
-/* line 77, ../scss/_typography.scss */
+/* line 103, ../scss/_typography.scss */
+a {
+  text-decoration: none;
+  border-bottom: 0.07em solid rgba(0, 0, 0, 0.2);
+  padding-bottom: .07em;
+  color: #0B92F6;
+}
+/* line 108, ../scss/_typography.scss */
+a:link {
+  -webkit-tap-highlight-color: rgba(229, 59, 44, 0.4);
+}
+/* line 111, ../scss/_typography.scss */
+a:hover {
+  border-bottom: .07em solid #0B92F6;
+}
+
+/****************************
+ EMPHASIS
+*****************************/
+/* for text we want to stand out, possibly at the beginning of an article */
+/* line 121, ../scss/_typography.scss */
+.lead {
+  font-weight: 300;
+}
+
+/* line 126, ../scss/_typography.scss */
+i, cite, em, var, address, dfn {
+  font-style: italic;
+}
+
+/* line 130, ../scss/_typography.scss */
+strong, b {
+  font-weight: 700;
+}
+
+/****************************
+ BLOCKQUOTES
+*****************************/
+/* adopted from http://html5doctor.com/blockquote-q-cite/ */
+/* line 143, ../scss/_typography.scss */
+q {
+  quotes: '“' '”' '‘' '’';
+}
+/* line 145, ../scss/_typography.scss */
+q:before {
+  content: '“';
+  content: open-quote;
+}
+/* line 148, ../scss/_typography.scss */
+q:after {
+  content: '”';
+  content: close-quote;
+}
+/* line 152, ../scss/_typography.scss */
+q q:before {
+  content: '‘';
+  content: open-quote;
+}
+/* line 155, ../scss/_typography.scss */
+q q:after {
+  content: '’';
+  content: close-quote;
+}
+
+/* line 161, ../scss/_typography.scss */
+blockquote {
+  quotes: '“' '”';
+  padding: 0.9rem;
+  padding-left: 2rem;
+  margin: 1.8rem 0 0.9rem -2rem;
+  border: 1px solid #eeeeee;
+  border-left-width: 3px;
+  border-radius: 3px;
+  text-indent: -0.4rem;
+}
+/* line 171, ../scss/_typography.scss */
+blockquote p:first-child {
+  margin-top: 0;
+}
+/* line 174, ../scss/_typography.scss */
+blockquote p:before {
+  content: '“';
+  content: open-quote;
+}
+/* line 177, ../scss/_typography.scss */
+blockquote p:after {
+  content: '';
+  content: no-close-quote;
+}
+/* line 180, ../scss/_typography.scss */
+blockquote p:last-child:after {
+  content: '”';
+  content: close-quote;
+}
+/* line 185, ../scss/_typography.scss */
+blockquote q:before {
+  content: '‘';
+  content: open-quote;
+}
+/* line 188, ../scss/_typography.scss */
+blockquote q:after {
+  content: '’';
+  content: close-quote;
+}
+/* line 192, ../scss/_typography.scss */
+blockquote q q:before {
+  content: '“';
+  content: open-quote;
+}
+/* line 195, ../scss/_typography.scss */
+blockquote q q:after {
+  content: '”';
+  content: close-quote;
+}
+/* line 200, ../scss/_typography.scss */
+blockquote footer {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-indent: 0;
+  color: #999999;
+}
+
+/****************************
+ LISTS
+*****************************/
+/* line 222, ../scss/_typography.scss */
+ol, ul {
+  margin-left: 1.9rem;
+}
+/* line 224, ../scss/_typography.scss */
+ol ol, ol ul, ul ol, ul ul {
+  margin-left: 1.7rem;
+}
+
+/* line 230, ../scss/_typography.scss */
+ol li {
+  list-style-type: decimal;
+}
+
+/* line 236, ../scss/_typography.scss */
+ul li {
+  list-style-type: disc;
+}
+/* line 238, ../scss/_typography.scss */
+ul li li {
+  list-style-type: circle;
+}
+
+/* line 244, ../scss/_typography.scss */
+dt {
+  font-weight: 700;
+}
+
+/****************************
+ HELPERS
+*****************************/
+/* line 252, ../scss/_typography.scss */
+.text-left {
+  text-align: left;
+}
+
+/* line 253, ../scss/_typography.scss */
+.text-center {
+  text-align: left;
+}
+
+/* line 254, ../scss/_typography.scss */
+.text-right {
+  text-align: left;
+}
+
+/* line 255, ../scss/_typography.scss */
+.text-justify {
+  text-align: justify;
+}
+
+/* line 256, ../scss/_typography.scss */
 .indent {
   text-indent: 1.25%;
 }
 
+/* line 257, ../scss/_typography.scss */
+.list-inline {
+  display: inline-block;
+}
+
+/* line 258, ../scss/_typography.scss */
+.list-unstyled {
+  margin-left: 0;
+}
+/* line 260, ../scss/_typography.scss */
+.list-unstyled > li {
+  list-style: none;
+}
+
+/* } */
 /*******************************
-BODY TYPOGRAPHY & GRID CALC
+CALCULATE GRID
 ********************************/
-/* line 86, ../scss/_typography.scss */
+/* line 6, ../scss/_grid.scss */
 .container {
   position: relative;
   max-width: 1140px;
   margin: 0 auto;
 }
 
-/* line 93, ../scss/_typography.scss */
+/* line 13, ../scss/_grid.scss */
 [class*="col-"] {
   position: relative;
   float: left;
@@ -371,148 +594,157 @@ BODY TYPOGRAPHY & GRID CALC
   min-height: 1px;
   margin: 1.25%;
 }
-/* line 100, ../scss/_typography.scss */
+/* line 20, ../scss/_grid.scss */
 [class*="col-"] [class*="col-"] {
   margin: 1.25% 0;
 }
 
-/* line 107, ../scss/_typography.scss */
+/* line 27, ../scss/_grid.scss */
 [class*="col-"] [class*="col-"] {
   margin: 0 1.25% 0;
 }
 
-/* line 120, ../scss/_typography.scss */
+/* line 40, ../scss/_grid.scss */
 .col-1 {
   width: 5.83333%;
-  line-height: 24px;
+  line-height: 1.5rem;
 }
 
-/* line 126, ../scss/_typography.scss */
+/* line 46, ../scss/_grid.scss */
 .collapse .col-1 {
   width: 8.33333%;
 }
 
-/* line 120, ../scss/_typography.scss */
+/* line 40, ../scss/_grid.scss */
 .col-2 {
   width: 14.16667%;
-  line-height: 25px;
+  line-height: 1.5625rem;
 }
 
-/* line 126, ../scss/_typography.scss */
+/* line 46, ../scss/_grid.scss */
 .collapse .col-2 {
   width: 16.66667%;
 }
 
-/* line 120, ../scss/_typography.scss */
+/* line 40, ../scss/_grid.scss */
 .col-3 {
   width: 22.5%;
-  line-height: 25px;
+  line-height: 1.5625rem;
 }
 
-/* line 126, ../scss/_typography.scss */
+/* line 46, ../scss/_grid.scss */
 .collapse .col-3 {
   width: 25%;
 }
 
-/* line 120, ../scss/_typography.scss */
+/* line 40, ../scss/_grid.scss */
 .col-4 {
   width: 30.83333%;
-  line-height: 26px;
+  line-height: 1.625rem;
 }
 
-/* line 126, ../scss/_typography.scss */
+/* line 46, ../scss/_grid.scss */
 .collapse .col-4 {
   width: 33.33333%;
 }
 
-/* line 120, ../scss/_typography.scss */
+/* line 40, ../scss/_grid.scss */
 .col-5 {
   width: 39.16667%;
-  line-height: 26px;
+  line-height: 1.625rem;
 }
 
-/* line 126, ../scss/_typography.scss */
+/* line 46, ../scss/_grid.scss */
 .collapse .col-5 {
   width: 41.66667%;
 }
 
-/* line 120, ../scss/_typography.scss */
+/* line 40, ../scss/_grid.scss */
 .col-6 {
   width: 47.5%;
-  line-height: 27px;
+  line-height: 1.6875rem;
 }
 
-/* line 126, ../scss/_typography.scss */
+/* line 46, ../scss/_grid.scss */
 .collapse .col-6 {
   width: 50%;
 }
 
-/* line 120, ../scss/_typography.scss */
+/* line 40, ../scss/_grid.scss */
 .col-7 {
   width: 55.83333%;
-  line-height: 28px;
+  line-height: 1.75rem;
 }
 
-/* line 126, ../scss/_typography.scss */
+/* line 46, ../scss/_grid.scss */
 .collapse .col-7 {
   width: 58.33333%;
 }
 
-/* line 120, ../scss/_typography.scss */
+/* line 40, ../scss/_grid.scss */
 .col-8 {
   width: 64.16667%;
-  line-height: 28px;
+  line-height: 1.75rem;
 }
 
-/* line 126, ../scss/_typography.scss */
+/* line 46, ../scss/_grid.scss */
 .collapse .col-8 {
   width: 66.66667%;
 }
 
-/* line 120, ../scss/_typography.scss */
+/* line 40, ../scss/_grid.scss */
 .col-9 {
   width: 72.5%;
-  line-height: 29px;
+  line-height: 1.8125rem;
 }
 
-/* line 126, ../scss/_typography.scss */
+/* line 46, ../scss/_grid.scss */
 .collapse .col-9 {
   width: 75%;
 }
 
-/* line 120, ../scss/_typography.scss */
+/* line 40, ../scss/_grid.scss */
 .col-10 {
   width: 80.83333%;
-  line-height: 30px;
+  line-height: 1.875rem;
 }
 
-/* line 126, ../scss/_typography.scss */
+/* line 46, ../scss/_grid.scss */
 .collapse .col-10 {
   width: 83.33333%;
 }
 
-/* line 120, ../scss/_typography.scss */
+/* line 40, ../scss/_grid.scss */
 .col-11 {
   width: 89.16667%;
-  line-height: 30px;
+  line-height: 1.875rem;
 }
 
-/* line 126, ../scss/_typography.scss */
+/* line 46, ../scss/_grid.scss */
 .collapse .col-11 {
   width: 91.66667%;
 }
 
-/* line 120, ../scss/_typography.scss */
+/* line 40, ../scss/_grid.scss */
 .col-12 {
   width: 97.5%;
-  line-height: 31px;
+  line-height: 1.9375rem;
 }
 
-/* line 126, ../scss/_typography.scss */
+/* line 46, ../scss/_grid.scss */
 .collapse .col-12 {
   width: 100%;
 }
 
+/*
+@if ($ie) {
+        @include calculate-grid;
+} @else {
+    @media only screen and (min-width:1005px) {
+        @include calculate-grid;
+    }
+}
+*/
 /* line 1, ../scss/_style-guide.scss */
 [class*="col-"] {
   min-height: 35px;
@@ -659,7 +891,7 @@ BODY TYPOGRAPHY & GRID CALC
 /* line 61, ../scss/app.scss */
 body {
   color: #333333;
-  font-size: 18;
+  font-size: 18px;
   font-family: "Open Sans", Verdana, Helvetica, sans-serif;
   font-weight: normal;
   line-height: 28.8px;

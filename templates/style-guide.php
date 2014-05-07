@@ -30,8 +30,8 @@ if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) echo
 		<h4>Primary</h4>
 		<ul class="swatch">
 			<li class="primary"></li>
-			<li class="primary light"></li>
-			<li class="primary dark"></li>
+			<li class="primary-light"></li>
+			<li class="primary-dark"></li>
 		</ul>
 	</div>
 	
@@ -39,8 +39,8 @@ if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) echo
 		<h4>Secondary</h4>
 		<ul class="swatch">
 			<li class="secondary"></li>
-			<li class="secondary light"></li>
-			<li class="secondary dark"></li>
+			<li class="secondary-light"></li>
+			<li class="secondary-dark"></li>
 		</ul>
 	</div>
 	
@@ -48,8 +48,8 @@ if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) echo
 		<h4>Accent</h4>
 		<ul class="swatch">
 			<li class="accent"></li>
-			<li class="accent light"></li>
-			<li class="accent dark"></li>
+			<li class="accent-light"></li>
+			<li class="accent-dark"></li>
 		</ul>
 	</div>
 		
@@ -57,8 +57,8 @@ if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) echo
 		<h4>Success</h4>
 		<ul class="swatch">
 			<li class="success"></li>
-			<li class="success light"></li>
-			<li class="success dark"></li>
+			<li class="success-light"></li>
+			<li class="success-dark"></li>
 		</ul>
 	</div>
 		
@@ -66,8 +66,8 @@ if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) echo
 		<h4>Warning</h4>
 		<ul class="swatch">
 			<li class="warning"></li>
-			<li class="warning light"></li>
-			<li class="warning dark"></li>
+			<li class="warning-light"></li>
+			<li class="warning-dark"></li>
 		</ul>
 	</div>
 	
@@ -75,8 +75,8 @@ if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) echo
 		<h4>Error</h4>
 		<ul class="swatch">
 			<li class="error"></li>
-			<li class="error light"></li>
-			<li class="error dark"></li>
+			<li class="error-light"></li>
+			<li class="error-dark"></li>
 		</ul>
 	</div>
 </div>
@@ -106,116 +106,95 @@ if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) echo
 <button class="error">Error</button>
 </div>
 
+<div class="container col-7">
+
 <h1>CSS Basic Elements</h1>
 
 <p>The purpose of this HTML is to help determine what default settings are with CSS and to make sure that all possible HTML Elements are included in this HTML so as to not miss any possible Elements when designing a site.</p>
 
 <hr />
 
-<div class="container">
+<h1>Headings</h1>
 
-<div class="typeset">
-	<h3>Typography</h3>
-	
-	<!--<div class="col-12">-->
-		<h1>Heading 1</h1>
-	<!--</div>-->
-	<!--<div class="col-12">-->
-		<h2>Heading 2</h2>
-	<!--</div>-->
-	<!--<div class="col-12">-->
-		<h3>Heading 3</h3>
-	<!--</div>-->
-	<!--<div class="col-12">-->
-		<h4>Heading 4</h4>
-	<!--</div>-->
-	<!--<div class="col-12">-->
-		<h5>Heading 5</h5>
-	<!--</div>-->
-	<!--<div class="col-12">-->
-		<h6>Heading 6</h6>
-	<!--</div>-->
+<h1>Heading 1 <small>Sub-heading</small></h1>
+<h2>Heading 2 <small>Sub-heading</small></h2>
+<h3>Heading 3 <small>Sub-heading</small></h3>
+<h4>Heading 4 <small>Sub-heading</small></h4>
+<h5>Heading 5 <small>Sub-heading</small></h5>
+<h6>Heading 6 <small>Sub-heading</small></h6>
 
 <hr />
 
-<h1 id="paragraph" class="indent">Paragraph</h1>
+<h1>Body Copy</h1>
 
 <!--<img src="http://placehold.it/300x350" alt="placeholder" />-->
 
-<p class="col-6">Communicated counter. Pay coast having time where stairs writer's and crew regretting fur he name without. Written economics said I the beginning a is like…. On the that although at the from home, his of the drew necessary disguised regulatory the were it the line gm the she they thing.</p>
+<p class="lead">Communicated counter. Pay coast having time where <a href="#">stairs writer's</a> and crew regretting fur he name without.</p>
 
-<p class="col-6">To upon far her mind approved at passion experience well would stand had of necessary process and all was the two to their such he they of behind not how semantics, is from great times, to make little manage the would little o'clock getting a and he'd brief by what drops. And they there's to conflict- set interfaces in degree to late, something clean thousand offers and harmonics, peacefully, past, broader over any the would can to copy, if and whose in considerations, the effort and a your of lowest deeply it behavioural you simple, times, of the consider clearly.</p>
-
-<p class="col-12">It insurance tickets or chosen thing their and time details cognitive the similar knowing principles, cons, out so commas, by coast differences secretly concept did him, and to considerations, go. An small the with for the be be, seal in honour; More at turned been bad moving understanding become textile as into insidious help spots to man on and to sister themselves shall said be that may gentlemen, we cache the had taken with dropped way, area the thousands for of he'd the now, home, more turn was any it the though to more never they employed a his concepts.</p>
+<p>To upon far her mind approved at passion experience well would stand had of necessary process and all was the two to their such he they of behind not how semantics, is from great times, <q>to make little manage <q>the would little o'clock</q> getting a and he'd brief by what drops.</q> And they there's to conflict- set interfaces in degree to late, something clean thousand offers and harmonics, peacefully, past, broader over any the would can to copy, if and whose in considerations, the effort and a your of lowest deeply it behavioural you simple, times, of the consider clearly.</p>
 
 <blockquote>
-  
-  <p>&ldquo;Lorem ipsum dolor sit amet,
-  consectetuer adipiscing elit. In accumsan diam
-  vitae velit. Aliquam vehicula, turpis sed egestas
-  porttitor, est ligula egestas leo, at interdum
-  leo ante ut risus.&rdquo;
-  <b>&mdash;Joe Bloggs</b></p>
-  
+<p>Citations … all include the following: author (or editor, compiler, or translator standing in place of the author), title (and usually subtitle), and date of publication.</p>
+<footer><cite><a href="http://www.chicagomanualofstyle.org/">The Chicago Manual of Style</a></cite>, 15th Edition (Chicago: University of Chicago Press, 2003), 596</footer>
 </blockquote>
 
+<p>It insurance tickets or chosen thing their and time details cognitive the similar knowing principles, cons, out so commas, by coast differences secretly concept did him, and to considerations, go. <strong>An small the with for the be be, seal in honor;</strong> More at turned been bad moving understanding become textile as into insidious help spots to man on and to sister themselves shall said be that may gentlemen, we cache the had taken with dropped way, area the thousands for of he'd the now, home, more turn was any it the though to more never they employed a his concepts.</p>
+
+<p><small><em>Written exclusively for WDD by Thursday Bram.</em></small></p>
+
+<p><strong><em>Do you follow these rules and others?&nbsp; Please share your views below…</em></strong></p>
+
 <hr />
 
-<h1 id="list_types">List Types</h1>
+<h1>List Types</h1>
 
-<h3>Definition List</h3>
-<dl>
-	<dt>Definition List Title</dt>
-	<dd>This is a definition list division.</dd>
-</dl>
+<div class="col-4">
+	<h5>Ordered List</h5>
+	<ol>
+		<li>List Item 1
+			<ol>
+				<li>List Item 1</li>
+				<li>List Item 2</li>
+				<li>List Item 3</li>
+			</ol>
+		</li>
+		<li>List Item 2</li>
+		<li>List Item 3</li>
+	</ol>
+</div>
 
-<h3>Ordered List</h3>
-<ol>
-	<li>List Item 1
-		<ol>
-			<li>List Item 1</li>
-			<li>List Item 2</li>
-			<li>List Item 3</li>
-		</ol>
-	</li>
-	<li>List Item 2</li>
-	<li>List Item 3</li>
-</ol>
+<div class="col-4">
+	<h5>Unordered List</h5>
+	<ul>
+		<li>List Item 1
+			<ul>
+				<li>List Item 1</li>
+				<li>List Item 2</li>
+				<li>List Item 3</li>
+			</ul>
+		</li>
+		<li>List Item 2</li>
+		<li>List Item 3</li>
+	</ul>
+</div>
 
-<h3>Unordered List</h3>
-<ul>
-	<li>List Item 1
-		<ul>
-			<li>List Item 1</li>
-			<li>List Item 2</li>
-			<li>List Item 3
-				<ul>
-					<li>List Item 1</li>
-					<li>List Item 2</li>
-					<li>List Item 3</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li>List Item 2</li>
-	<li>List Item 3</li>
-</ul>
+<div class="col-4">
+	<h5>Definition List</h5>
+	<dl>
+		<dt>Definition List Title</dt>
+		<dd>This is a definition list division.</dd>
+	</dl>
+	<dl>
+		<dt>Definition List Title</dt>
+		<dd>This is a definition list division.</dd>
+	</dl>
+	<dl>
+		<dt>Definition List Title</dt>
+		<dd>This is a definition list division.</dd>
+	</dl>
+</div>
 
-<small><a href="#wrapper">[top]</a></small>
 <hr />
-
-</div>
-
-<div class="col-1">
-1-col
-</div>
-
-<div class="col-3">
-Sidebar
-</div>
-
-</div>
-
 
 <h1 id="form_elements">Fieldsets, Legends, and Form Elements</h1>
 
@@ -309,12 +288,7 @@ Sidebar
 
 <pre><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. <acronym title="National Basketball Association">NBA</acronym> Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.  <abbr title="Avenue">AVE</abbr></p></pre>
 
-<blockquote>
-	"This stylesheet is going to help so freaking much." <br />-Blockquote
-</blockquote>
-
-<small><a href="#wrapper">[top]</a></small>
-<!-- End of Sample Content -->
+</div>
 
 </div>
 
