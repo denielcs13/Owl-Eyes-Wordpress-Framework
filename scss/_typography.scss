@@ -100,16 +100,18 @@ p {
 	word-wrap: break-word;
 }
 
-a {
-	text-decoration: none;
-	border-bottom: .07em solid rgba(0, 0, 0, .2);
-	padding-bottom: .07em;
-	color: $info;
-	&:link {
-    	-webkit-tap-highlight-color: rgba(229,59,44,.4);
-	}
-	&:hover {
-    	border-bottom: .07em solid $info;
+p >, .post-meta {
+	a {
+		text-decoration: none;
+		border-bottom: .07em solid rgba(0, 0, 0, .2);
+		padding-bottom: .07em;
+		color: $info;
+		&:hover {
+	    	border-bottom: .07em solid $info;
+		}
+		&:visited {
+			color: #4B0DCF;
+		}
 	}
 }
 
@@ -159,6 +161,7 @@ q {
 }
 
 blockquote {
+	clear: both;
 	quotes: '“' '”';
 	padding: rem($base_line_height/2);
 	padding-left: 2rem;
@@ -249,12 +252,24 @@ dt {
  HELPERS
 *****************************/
 
-.text-left, .align-left { text-align: left; }
-.text-center, .align-center { text-align: center; }
-.text-right, .align-right { text-align: right; }
+.text-left { text-align: left; }
+
+.text-center { text-align: center; }
+
+.text-right { text-align: right; }
+
 .text-justify { text-align: justify; }
+
+.align-left { float: left; margin: 0 1em 1em 0; }
+
+.align-center { display: block; margin-left: auto; margin-right: auto; }
+
+.align-right { float: right; margin: 0 0 1em 1em; }
+
 .indent { text-indent: percentage($margin/100); }
+
 .list-inline { display: inline-block; }
+
 .list-unstyled {
 	margin-left: 0;
 	> li {

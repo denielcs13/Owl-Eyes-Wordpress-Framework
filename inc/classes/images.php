@@ -14,18 +14,7 @@
  * @since      version 0.1
  */
 
-/*
-add_filter( 'image_send_to_editor', 'fancy_capable', 10, 7);
-       function fancy_capable($html, $id, $alt, $title, $align, $url, $size ) {
-           $url = wp_get_attachment_url($id); // Grab the current image URL
-           $html = '<a href="' . $url .  '" class="fancybox" rel="your-rel"><img src="..." /></a>';
-           return $html;
-       }
-*/
-
 class OE_Img_Rebuild {
-
-	var $align_class;
  
 	public function __construct() {
 	
@@ -33,7 +22,41 @@ class OE_Img_Rebuild {
 	
 		add_filter( 'get_avatar', array( $this, 'recreate_img_tag' ) );
 	
-		add_filter( 'the_content', array( $this, 'the_content') );
+		add_filter( 'the_content', array( $this, 'the_content' ) );
+	}
+	
+	/**
+	* Change classes, may be nitpicky but these seem better
+	*/
+	private function format_class( $class ) {
+		
+		$align = '';
+		
+		// change to nicer align classes
+		switch($class) {
+			
+			case 'alignleft':
+				
+				$align = 'align-left';
+				break;
+			
+			case 'alignright':
+				
+				$align = 'align-right';
+				break;
+			
+			case 'aligncenter':
+				
+				$align = 'align-center';
+				break;
+			
+			default:
+				
+				$align = 'align-none';
+				break;
+		}
+		
+		return $align;
 	}
  
 	public function recreate_img_tag( $tag ) {
@@ -72,14 +95,13 @@ class OE_Img_Rebuild {
 				
 				// set variable so we can add it to figure
 				if( in_array( $class_segs[0], $allowed_classes ) ) {
-					//$img .= ' class="' . $class_segs[0] . '"';
-					$this->align_class = $class_segs[0];
+					$img .= ' class="' . $this->format_class( $class_segs[0] ) . '"';
 				}
 				
 				// Finish up the img tag
 				$img .= ' />';
 				
-				return array($img, $class_segs[0]); 
+				return $img; 
 			}
 		} catch ( Exception $e ) {}
 		
@@ -92,13 +114,13 @@ class OE_Img_Rebuild {
 	*/
 	public function the_content( $html ) {
 		
-		$html = preg_replace_callback( 
+		/*$html = preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '<figure>$1</figure>', $html);*/
+		
+		return preg_replace_callback( 
 			'|(<img.*/>)|', 
 			array( $this, 'the_content_callback' ),
 			$html
 		);
-	
-		return preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '<figure class="'.$this->align_class.'">$1</figure>', $html);
 	}
  
 	/**
@@ -106,22 +128,16 @@ class OE_Img_Rebuild {
 	*/
 	private function the_content_callback( $match ) {
 	
-		return $this->recreate_img_tag( $match[0] )[0];
-	}
-	
-	/**
-	* Rebuild an image in post content
-	*/
-	private function the_content_align( $match ) {
-	
-		return $this->recreate_img_tag( $match[0] )[1];
+		return $this->recreate_img_tag( $match[0] );
 	}
 	
 	/**
 	* Customize caption shortcode
 	*/
 	public function img_caption_shortcode( $output, $attr, $content ) {
-	
+		
+		$align = '';
+		
 		// not for feed
 		if ( is_feed() )
 			return $output;
@@ -133,38 +149,16 @@ class OE_Img_Rebuild {
 			'width'   => ''
 		), $attr );
 		
-		// change to nicer align classes
-		switch($attr['align']) {
-			
-			case 'alignleft':
-				
-				$align = 'align-left';
-				break;
-			
-			case 'aligncenter':
-				
-				$align = 'align-right';
-				break;
-			
-			case 'aligncenter':
-				
-				$align = 'align-center';
-				break;
-			
-			default:
-				
-				$align = 'align-none';
-				break;
-		}
+		$align = $this->format_class( trim( $attr['align'] ) );
 		
 		// add classes to caption
 		$attributes  = '';
 		
-		$attributes .= ' class="' . esc_attr( $align ) . '"';
+		$attributes .= ' class="' . $align . '"';
 		
 		// create caption HTML
 		$output = '
-			<figure' . $attributes .'>' . 
+			<figure ' . $attributes . '>' . 
 				do_shortcode( $content ) . 
 				'<figcaption>' . $attr['caption'] . '</figcaption>' . 
 			'</figure>

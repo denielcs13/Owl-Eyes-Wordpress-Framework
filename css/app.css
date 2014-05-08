@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 /*------------------------------------------------------------------
 [Master Stylesheet]
 
@@ -10,8 +11,7 @@ Last change: 03/30/14
 /* These functions define ranges for various things, like media queries */
 /* Calculate REM from interger or px */
 /* The following was adopted from the Foundation framework */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
-/* line 5, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -33,46 +33,46 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+/* line 116, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
@@ -105,6 +105,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .focus, input[type=text]:focus, input[type=email]:focus, input[type=tel]:focus, textarea:focus, select:focus, :root input[type=checkbox]:focus + label:before, :root input[type=radio]:focus + label:before {
   border-color: #0b92f6;
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.075), 0 0 2px rgba(102, 175, 233, 0.6);
+}
+
+/* line 22, ../scss/_extends.scss */
+.clearfix:after, .container:after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
 }
 
 /* line 1, ../scss/_buttons.scss */
@@ -394,37 +403,37 @@ p {
   word-wrap: break-word;
 }
 
-/* line 103, ../scss/_typography.scss */
-a {
+/* line 104, ../scss/_typography.scss */
+p > a, .post-meta a {
   text-decoration: none;
   border-bottom: 0.07em solid rgba(0, 0, 0, 0.2);
   padding-bottom: .07em;
   color: #0b92f6;
 }
-/* line 108, ../scss/_typography.scss */
-a:link {
-  -webkit-tap-highlight-color: rgba(229, 59, 44, 0.4);
-}
-/* line 111, ../scss/_typography.scss */
-a:hover {
+/* line 109, ../scss/_typography.scss */
+p > a:hover, .post-meta a:hover {
   border-bottom: 0.07em solid #0b92f6;
+}
+/* line 112, ../scss/_typography.scss */
+p > a:visited, .post-meta a:visited {
+  color: #4B0DCF;
 }
 
 /****************************
  EMPHASIS
 *****************************/
 /* for text we want to stand out, possibly at the beginning of an article */
-/* line 121, ../scss/_typography.scss */
+/* line 123, ../scss/_typography.scss */
 .lead {
   font-weight: 300;
 }
 
-/* line 126, ../scss/_typography.scss */
+/* line 128, ../scss/_typography.scss */
 i, cite, em, var, address, dfn {
   font-style: italic;
 }
 
-/* line 130, ../scss/_typography.scss */
+/* line 132, ../scss/_typography.scss */
 strong, b {
   font-weight: 700;
 }
@@ -433,33 +442,34 @@ strong, b {
  BLOCKQUOTES
 *****************************/
 /* adopted from http://html5doctor.com/blockquote-q-cite/ */
-/* line 143, ../scss/_typography.scss */
+/* line 145, ../scss/_typography.scss */
 q {
   quotes: '“' '”' '‘' '’';
 }
-/* line 145, ../scss/_typography.scss */
+/* line 147, ../scss/_typography.scss */
 q:before {
   content: '“';
   content: open-quote;
 }
-/* line 148, ../scss/_typography.scss */
+/* line 150, ../scss/_typography.scss */
 q:after {
   content: '”';
   content: close-quote;
 }
-/* line 152, ../scss/_typography.scss */
+/* line 154, ../scss/_typography.scss */
 q q:before {
   content: '‘';
   content: open-quote;
 }
-/* line 155, ../scss/_typography.scss */
+/* line 157, ../scss/_typography.scss */
 q q:after {
   content: '’';
   content: close-quote;
 }
 
-/* line 161, ../scss/_typography.scss */
+/* line 163, ../scss/_typography.scss */
 blockquote {
+  clear: both;
   quotes: '“' '”';
   padding: 0.9rem;
   padding-left: 2rem;
@@ -469,46 +479,46 @@ blockquote {
   border-radius: 3px;
   text-indent: -0.4rem;
 }
-/* line 171, ../scss/_typography.scss */
+/* line 174, ../scss/_typography.scss */
 blockquote p:first-child {
   margin-top: 0;
 }
-/* line 174, ../scss/_typography.scss */
+/* line 177, ../scss/_typography.scss */
 blockquote p:before {
   content: '“';
   content: open-quote;
 }
-/* line 177, ../scss/_typography.scss */
+/* line 180, ../scss/_typography.scss */
 blockquote p:after {
   content: '';
   content: no-close-quote;
 }
-/* line 180, ../scss/_typography.scss */
+/* line 183, ../scss/_typography.scss */
 blockquote p:last-child:after {
   content: '”';
   content: close-quote;
 }
-/* line 185, ../scss/_typography.scss */
+/* line 188, ../scss/_typography.scss */
 blockquote q:before {
   content: '‘';
   content: open-quote;
 }
-/* line 188, ../scss/_typography.scss */
+/* line 191, ../scss/_typography.scss */
 blockquote q:after {
   content: '’';
   content: close-quote;
 }
-/* line 192, ../scss/_typography.scss */
+/* line 195, ../scss/_typography.scss */
 blockquote q q:before {
   content: '“';
   content: open-quote;
 }
-/* line 195, ../scss/_typography.scss */
+/* line 198, ../scss/_typography.scss */
 blockquote q q:after {
   content: '”';
   content: close-quote;
 }
-/* line 200, ../scss/_typography.scss */
+/* line 203, ../scss/_typography.scss */
 blockquote footer {
   white-space: nowrap;
   overflow: hidden;
@@ -520,30 +530,30 @@ blockquote footer {
 /****************************
  LISTS
 *****************************/
-/* line 222, ../scss/_typography.scss */
+/* line 225, ../scss/_typography.scss */
 ol, ul {
   margin-left: 1.9rem;
 }
-/* line 224, ../scss/_typography.scss */
+/* line 227, ../scss/_typography.scss */
 ol ol, ol ul, ul ol, ul ul {
   margin-left: 1.7rem;
 }
 
-/* line 230, ../scss/_typography.scss */
+/* line 233, ../scss/_typography.scss */
 ol li {
   list-style-type: decimal;
 }
 
-/* line 236, ../scss/_typography.scss */
+/* line 239, ../scss/_typography.scss */
 ul li {
   list-style-type: disc;
 }
-/* line 238, ../scss/_typography.scss */
+/* line 241, ../scss/_typography.scss */
 ul li li {
   list-style-type: circle;
 }
 
-/* line 244, ../scss/_typography.scss */
+/* line 247, ../scss/_typography.scss */
 dt {
   font-weight: 700;
 }
@@ -551,41 +561,60 @@ dt {
 /****************************
  HELPERS
 *****************************/
-/* line 252, ../scss/_typography.scss */
-.text-left, .align-left {
+/* line 255, ../scss/_typography.scss */
+.text-left {
   text-align: left;
 }
 
-/* line 253, ../scss/_typography.scss */
-.text-center, .align-center {
+/* line 257, ../scss/_typography.scss */
+.text-center {
   text-align: center;
 }
 
-/* line 254, ../scss/_typography.scss */
-.text-right, .align-right {
+/* line 259, ../scss/_typography.scss */
+.text-right {
   text-align: right;
 }
 
-/* line 255, ../scss/_typography.scss */
+/* line 261, ../scss/_typography.scss */
 .text-justify {
   text-align: justify;
 }
 
-/* line 256, ../scss/_typography.scss */
+/* line 263, ../scss/_typography.scss */
+.align-left {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+
+/* line 265, ../scss/_typography.scss */
+.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 267, ../scss/_typography.scss */
+.align-right {
+  float: right;
+  margin: 0 0 1em 1em;
+}
+
+/* line 269, ../scss/_typography.scss */
 .indent {
   text-indent: 1.25%;
 }
 
-/* line 257, ../scss/_typography.scss */
+/* line 271, ../scss/_typography.scss */
 .list-inline {
   display: inline-block;
 }
 
-/* line 258, ../scss/_typography.scss */
+/* line 273, ../scss/_typography.scss */
 .list-unstyled {
   margin-left: 0;
 }
-/* line 260, ../scss/_typography.scss */
+/* line 275, ../scss/_typography.scss */
 .list-unstyled > li {
   list-style: none;
 }
@@ -601,7 +630,13 @@ CALCULATE GRID
   margin: 0 auto;
 }
 
-/* line 13, ../scss/_grid.scss */
+/* line 15, ../scss/_grid.scss */
+.full {
+  display: inline-block;
+  width: 100%;
+}
+
+/* line 21, ../scss/_grid.scss */
 [class*="col-"] {
   position: relative;
   float: left;
@@ -609,144 +644,144 @@ CALCULATE GRID
   min-height: 1px;
   margin: 1.25%;
 }
-/* line 20, ../scss/_grid.scss */
+/* line 28, ../scss/_grid.scss */
 [class*="col-"] [class*="col-"] {
   margin: 1.25% 0;
 }
 
-/* line 27, ../scss/_grid.scss */
+/* line 35, ../scss/_grid.scss */
 [class*="col-"] [class*="col-"] {
   margin: 0 1.25% 0;
 }
 
-/* line 40, ../scss/_grid.scss */
+/* line 48, ../scss/_grid.scss */
 .col-1 {
   width: 5.83333%;
   line-height: 1.5rem;
 }
 
-/* line 46, ../scss/_grid.scss */
+/* line 54, ../scss/_grid.scss */
 .collapse .col-1 {
   width: 8.33333%;
 }
 
-/* line 40, ../scss/_grid.scss */
+/* line 48, ../scss/_grid.scss */
 .col-2 {
   width: 14.16667%;
   line-height: 1.5625rem;
 }
 
-/* line 46, ../scss/_grid.scss */
+/* line 54, ../scss/_grid.scss */
 .collapse .col-2 {
   width: 16.66667%;
 }
 
-/* line 40, ../scss/_grid.scss */
+/* line 48, ../scss/_grid.scss */
 .col-3 {
   width: 22.5%;
   line-height: 1.5625rem;
 }
 
-/* line 46, ../scss/_grid.scss */
+/* line 54, ../scss/_grid.scss */
 .collapse .col-3 {
   width: 25%;
 }
 
-/* line 40, ../scss/_grid.scss */
+/* line 48, ../scss/_grid.scss */
 .col-4 {
   width: 30.83333%;
   line-height: 1.625rem;
 }
 
-/* line 46, ../scss/_grid.scss */
+/* line 54, ../scss/_grid.scss */
 .collapse .col-4 {
   width: 33.33333%;
 }
 
-/* line 40, ../scss/_grid.scss */
+/* line 48, ../scss/_grid.scss */
 .col-5 {
   width: 39.16667%;
   line-height: 1.625rem;
 }
 
-/* line 46, ../scss/_grid.scss */
+/* line 54, ../scss/_grid.scss */
 .collapse .col-5 {
   width: 41.66667%;
 }
 
-/* line 40, ../scss/_grid.scss */
+/* line 48, ../scss/_grid.scss */
 .col-6 {
   width: 47.5%;
   line-height: 1.6875rem;
 }
 
-/* line 46, ../scss/_grid.scss */
+/* line 54, ../scss/_grid.scss */
 .collapse .col-6 {
   width: 50%;
 }
 
-/* line 40, ../scss/_grid.scss */
+/* line 48, ../scss/_grid.scss */
 .col-7 {
   width: 55.83333%;
   line-height: 1.75rem;
 }
 
-/* line 46, ../scss/_grid.scss */
+/* line 54, ../scss/_grid.scss */
 .collapse .col-7 {
   width: 58.33333%;
 }
 
-/* line 40, ../scss/_grid.scss */
+/* line 48, ../scss/_grid.scss */
 .col-8 {
   width: 64.16667%;
   line-height: 1.75rem;
 }
 
-/* line 46, ../scss/_grid.scss */
+/* line 54, ../scss/_grid.scss */
 .collapse .col-8 {
   width: 66.66667%;
 }
 
-/* line 40, ../scss/_grid.scss */
+/* line 48, ../scss/_grid.scss */
 .col-9 {
   width: 72.5%;
   line-height: 1.8125rem;
 }
 
-/* line 46, ../scss/_grid.scss */
+/* line 54, ../scss/_grid.scss */
 .collapse .col-9 {
   width: 75%;
 }
 
-/* line 40, ../scss/_grid.scss */
+/* line 48, ../scss/_grid.scss */
 .col-10 {
   width: 80.83333%;
   line-height: 1.875rem;
 }
 
-/* line 46, ../scss/_grid.scss */
+/* line 54, ../scss/_grid.scss */
 .collapse .col-10 {
   width: 83.33333%;
 }
 
-/* line 40, ../scss/_grid.scss */
+/* line 48, ../scss/_grid.scss */
 .col-11 {
   width: 89.16667%;
   line-height: 1.875rem;
 }
 
-/* line 46, ../scss/_grid.scss */
+/* line 54, ../scss/_grid.scss */
 .collapse .col-11 {
   width: 91.66667%;
 }
 
-/* line 40, ../scss/_grid.scss */
+/* line 48, ../scss/_grid.scss */
 .col-12 {
   width: 97.5%;
   line-height: 1.9375rem;
 }
 
-/* line 46, ../scss/_grid.scss */
+/* line 54, ../scss/_grid.scss */
 .collapse .col-12 {
   width: 100%;
 }
@@ -916,49 +951,50 @@ body {
   font-family: "Open Sans", Verdana, Helvetica, sans-serif;
   font-weight: normal;
   line-height: 28.8px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 /* apply a natural box layout model to all elements */
-/* line 66, ../scss/app.scss */
+/* line 67, ../scss/app.scss */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 72, ../scss/app.scss */
+/* line 73, ../scss/app.scss */
 .pagination {
   text-align: center;
 }
-/* line 74, ../scss/app.scss */
+/* line 75, ../scss/app.scss */
 .pagination li {
   display: inline-block;
   margin: 0 18px;
 }
-/* line 78, ../scss/app.scss */
+/* line 79, ../scss/app.scss */
 .pagination .prev:before {
   content: '\25c0';
 }
-/* line 81, ../scss/app.scss */
+/* line 82, ../scss/app.scss */
 .pagination .next:after {
   content: "\25b6";
 }
 
-/* line 86, ../scss/app.scss */
+/* line 87, ../scss/app.scss */
 .read-more {
   display: block;
 }
-/* line 88, ../scss/app.scss */
+/* line 89, ../scss/app.scss */
 .read-more:after {
   content: '\2192';
 }
 
-/* line 93, ../scss/app.scss */
+/* line 94, ../scss/app.scss */
 li {
   list-style: none;
 }
 
-/* line 97, ../scss/app.scss */
+/* line 98, ../scss/app.scss */
 .progress {
   display: block;
   position: relative;
@@ -966,7 +1002,7 @@ li {
   height: 8px;
   background: #E4E7E7;
 }
-/* line 103, ../scss/app.scss */
+/* line 104, ../scss/app.scss */
 .progress:after {
   content: '';
   display: block;
@@ -977,22 +1013,22 @@ li {
 }
 
 /* calculate progress bar */
-/* line 120, ../scss/app.scss */
+/* line 121, ../scss/app.scss */
 [data-progress='1']:after {
   width: 25%;
 }
 
-/* line 120, ../scss/app.scss */
+/* line 121, ../scss/app.scss */
 [data-progress='2']:after {
   width: 50%;
 }
 
-/* line 120, ../scss/app.scss */
+/* line 121, ../scss/app.scss */
 [data-progress='3']:after {
   width: 75%;
 }
 
-/* line 120, ../scss/app.scss */
+/* line 121, ../scss/app.scss */
 [data-progress='4']:after {
   width: 100%;
 }

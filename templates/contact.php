@@ -7,6 +7,17 @@
 
 	Check on live form validation using HTML5 required attribute
 	Autocomplete? -> x-autocompletetype=””
+
+iPhone Compatible forms
+<form autocapitalize="words">
+    First Name: <input name="first-name">
+    Last Name: <input name="last-name">
+    State: <input name="state" autocapitalize="characters">
+    Username: <input name="username" autocapitalize="none">
+    Comment: <textarea name="comment" autocapitalize="sentences"></textarea>
+</form>
+
+
 */
 
 ?>

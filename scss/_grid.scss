@@ -7,6 +7,14 @@ CALCULATE GRID
 	position: relative;
 	max-width: $content-width + px;
 	margin: 0 auto;
+	&:after {
+		@extend .clearfix;
+	}
+}
+
+.full {
+	display: inline-block;
+	width: 100%;
 }
 
 // the base of our columns class

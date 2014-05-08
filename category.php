@@ -1,5 +1,13 @@
 <?php get_header(); ?>
 
+
+<?php
+
+// LETS IMPLEMENT THIS SHIZZZ !
+// http://www.pearsonified.com/2011/06/wordpress-category-page-seo.php
+
+?>
+
 	<div class="full-grey title-wrap">
 		<h1 class="col-12">Category: <?php wp_title(''); ?></h1>
 	</div>
