@@ -249,9 +249,9 @@ dt {
  HELPERS
 *****************************/
 
-.text-left, .alignleft { text-align: left; }
-.text-center, .aligncenter { text-align: center; }
-.text-right, .alignright { text-align: right; }
+.text-left, .align-left { text-align: left; }
+.text-center, .align-center { text-align: center; }
+.text-right, .align-right { text-align: right; }
 .text-justify { text-align: justify; }
 .indent { text-indent: percentage($margin/100); }
 .list-inline { display: inline-block; }

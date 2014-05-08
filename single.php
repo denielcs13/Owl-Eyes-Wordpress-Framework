@@ -38,13 +38,14 @@ if ($pages) {
 	<section class="post-content" itemprop="articleBody">
 		<?php the_post_thumbnail('post-thumbnail', array('itemprop'=>'image')); ?>
 		<?php the_content(); ?>
-		<?php the_post_thumbnail_caption(); ?>
 	</section>
 	
 	<footer class="post-footer">
 		<?php the_category(', '); ?>
 		<?php // SHARE BUTTONS HERE ?>
 	</footer>
+	
+	<?php edit_post_link('edit', '<p>', '</p>'); ?>
 	
 	<?php comments_template(); ?>
 	
