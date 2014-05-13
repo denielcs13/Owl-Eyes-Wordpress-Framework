@@ -15,6 +15,7 @@ CALCULATE GRID
 .full {
 	display: inline-block;
 	width: 100%;
+	vertical-align: middle;
 }
 
 // the base of our columns class
@@ -28,6 +29,8 @@ CALCULATE GRID
 	[class*="col-"] {
 		margin: percentage($margin/100) 0;
 	}
+	
+	background: #C89ED9;
 }
 
 @mixin calculate-grid() { 
@@ -57,7 +60,12 @@ CALCULATE GRID
 		}
 	}
 }
+
+@media only screen and (min-width : 1224px) {
+
 @include calculate-grid;
+
+}
 
 // IE sucks as always so we won't include any media queries
 /*

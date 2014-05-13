@@ -109,7 +109,7 @@ iPhone Compatible forms
 	<div class="col-4">
 		<label>
 			Test
-			<textarea class="form-control" rows="3" disabled></textarea>
+			<textarea class="form-control" rows="3"></textarea>
 		</label>
 	</div>
 </fieldset>

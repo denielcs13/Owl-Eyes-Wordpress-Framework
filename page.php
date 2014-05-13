@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 	
+	<div class="container">
+	
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
 	<div class="full-grey page-title-wrap">
@@ -15,7 +17,7 @@
 		<?php } ?>
 	</div>
 	
-	<div class="col-12">
+	<div class="col-7">
 	
 		<?php the_content(); ?>
 	
@@ -26,5 +28,7 @@
 	</div>
 	
 	<?php endwhile; endif; ?>
+	
+	</div>
 
 <?php get_footer(); ?>

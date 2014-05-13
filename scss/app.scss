@@ -26,34 +26,6 @@ $ie: false;
 // for development purposes only, should be commented out in production environment
 @import "style-guide";
 
-.show {
-  display: block !important;
-}
-
-.hide {
-  display: none !important;
-}
-
-.hidden {
-  display: none !important;
-  visibility: hidden !important;
-}
-
-.invisible {
-  visibility: hidden;
-}
-
-.screen-reader-text {
-	position: absolute;
-	margin: -1px;
-	padding: 0;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	clip: rect(0 0 0 0);
-	border: 0;
-}
-
 body {
   color: $text-color;
   font-size: $base-font-size + px;

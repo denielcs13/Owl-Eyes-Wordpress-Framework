@@ -19,10 +19,66 @@
 	box-shadow: inset 1px 1px 2px rgba(0,0,0,.075), 0 0 2px rgba(102,175,233,.6);
 }
 
-.clearfix:after { 
-   content: '';
-   display: block; 
-   height: 0; 
-   clear: both;
-   visibility: hidden;
+.clearfix {
+  zoom:1; /* For IE 6/7 (trigger hasLayout) */
+  &:before, &:after {
+  	content:'';
+  	display:table;
+  }
+  &:after {
+	  clear: both;
+  }
+}
+
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.screen-reader-text {
+	position: absolute;
+	margin: -1px;
+	padding: 0;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	border: 0;
+}
+
+.pull-left {
+  float: left !important;
+}
+.pull-right {
+  float: right !important;
+}
+
+.img-rounded {
+	border-radius: 6px;
+}
+.img-circle {
+	border-radius: 50%;
+}
+.img-thumbnail {
+	padding: 4px;
+	line-height: 1.42857143;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	display: inline-block;
+	max-width: 100%;
 }

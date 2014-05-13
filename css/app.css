@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 /*------------------------------------------------------------------
 [Master Stylesheet]
 
@@ -11,7 +10,8 @@ Last change: 03/30/14
 /* These functions define ranges for various things, like media queries */
 /* Calculate REM from interger or px */
 /* The following was adopted from the Foundation framework */
-/* line 17, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+/* line 5, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -33,46 +33,46 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+/* line 116, ../../../../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/compass-core/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
@@ -108,12 +108,84 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 22, ../scss/_extends.scss */
-.clearfix:after, .container:after {
+.clearfix, .container:after {
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */
+}
+/* line 24, ../scss/_extends.scss */
+.clearfix:before, .clearfix:after, .container:after {
   content: '';
-  display: block;
-  height: 0;
+  display: table;
+}
+/* line 28, ../scss/_extends.scss */
+.clearfix:after, .container:after {
   clear: both;
+}
+
+/* line 33, ../scss/_extends.scss */
+.show {
+  display: block !important;
+}
+
+/* line 37, ../scss/_extends.scss */
+.hide {
+  display: none !important;
+}
+
+/* line 41, ../scss/_extends.scss */
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* line 46, ../scss/_extends.scss */
+.invisible {
   visibility: hidden;
+}
+
+/* line 50, ../scss/_extends.scss */
+.screen-reader-text, :root input[type=checkbox], :root input[type=radio] {
+  position: absolute;
+  margin: -1px;
+  padding: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+/* line 61, ../scss/_extends.scss */
+.pull-left {
+  float: left !important;
+}
+
+/* line 64, ../scss/_extends.scss */
+.pull-right {
+  float: right !important;
+}
+
+/* line 68, ../scss/_extends.scss */
+.img-rounded {
+  border-radius: 6px;
+}
+
+/* line 71, ../scss/_extends.scss */
+.img-circle {
+  border-radius: 50%;
+}
+
+/* line 74, ../scss/_extends.scss */
+.img-thumbnail {
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  display: inline-block;
+  max-width: 100%;
 }
 
 /* line 1, ../scss/_buttons.scss */
@@ -634,158 +706,161 @@ CALCULATE GRID
 .full {
   display: inline-block;
   width: 100%;
+  vertical-align: middle;
 }
 
-/* line 21, ../scss/_grid.scss */
+/* line 22, ../scss/_grid.scss */
 [class*="col-"] {
   position: relative;
   float: left;
   width: 97.5%;
   min-height: 1px;
   margin: 1.25%;
+  background: #C89ED9;
 }
-/* line 28, ../scss/_grid.scss */
+/* line 29, ../scss/_grid.scss */
 [class*="col-"] [class*="col-"] {
   margin: 1.25% 0;
 }
 
-/* line 35, ../scss/_grid.scss */
-[class*="col-"] [class*="col-"] {
-  margin: 0 1.25% 0;
-}
+@media only screen and (min-width: 1224px) {
+  /* line 38, ../scss/_grid.scss */
+  [class*="col-"] [class*="col-"] {
+    margin: 0 1.25% 0;
+  }
 
-/* line 48, ../scss/_grid.scss */
-.col-1 {
-  width: 5.83333%;
-  line-height: 1.5rem;
-}
+  /* line 51, ../scss/_grid.scss */
+  .col-1 {
+    width: 5.83333%;
+    line-height: 1.5rem;
+  }
 
-/* line 54, ../scss/_grid.scss */
-.collapse .col-1 {
-  width: 8.33333%;
-}
+  /* line 57, ../scss/_grid.scss */
+  .collapse .col-1 {
+    width: 8.33333%;
+  }
 
-/* line 48, ../scss/_grid.scss */
-.col-2 {
-  width: 14.16667%;
-  line-height: 1.5625rem;
-}
+  /* line 51, ../scss/_grid.scss */
+  .col-2 {
+    width: 14.16667%;
+    line-height: 1.5625rem;
+  }
 
-/* line 54, ../scss/_grid.scss */
-.collapse .col-2 {
-  width: 16.66667%;
-}
+  /* line 57, ../scss/_grid.scss */
+  .collapse .col-2 {
+    width: 16.66667%;
+  }
 
-/* line 48, ../scss/_grid.scss */
-.col-3 {
-  width: 22.5%;
-  line-height: 1.5625rem;
-}
+  /* line 51, ../scss/_grid.scss */
+  .col-3 {
+    width: 22.5%;
+    line-height: 1.5625rem;
+  }
 
-/* line 54, ../scss/_grid.scss */
-.collapse .col-3 {
-  width: 25%;
-}
+  /* line 57, ../scss/_grid.scss */
+  .collapse .col-3 {
+    width: 25%;
+  }
 
-/* line 48, ../scss/_grid.scss */
-.col-4 {
-  width: 30.83333%;
-  line-height: 1.625rem;
-}
+  /* line 51, ../scss/_grid.scss */
+  .col-4 {
+    width: 30.83333%;
+    line-height: 1.625rem;
+  }
 
-/* line 54, ../scss/_grid.scss */
-.collapse .col-4 {
-  width: 33.33333%;
-}
+  /* line 57, ../scss/_grid.scss */
+  .collapse .col-4 {
+    width: 33.33333%;
+  }
 
-/* line 48, ../scss/_grid.scss */
-.col-5 {
-  width: 39.16667%;
-  line-height: 1.625rem;
-}
+  /* line 51, ../scss/_grid.scss */
+  .col-5 {
+    width: 39.16667%;
+    line-height: 1.625rem;
+  }
 
-/* line 54, ../scss/_grid.scss */
-.collapse .col-5 {
-  width: 41.66667%;
-}
+  /* line 57, ../scss/_grid.scss */
+  .collapse .col-5 {
+    width: 41.66667%;
+  }
 
-/* line 48, ../scss/_grid.scss */
-.col-6 {
-  width: 47.5%;
-  line-height: 1.6875rem;
-}
+  /* line 51, ../scss/_grid.scss */
+  .col-6 {
+    width: 47.5%;
+    line-height: 1.6875rem;
+  }
 
-/* line 54, ../scss/_grid.scss */
-.collapse .col-6 {
-  width: 50%;
-}
+  /* line 57, ../scss/_grid.scss */
+  .collapse .col-6 {
+    width: 50%;
+  }
 
-/* line 48, ../scss/_grid.scss */
-.col-7 {
-  width: 55.83333%;
-  line-height: 1.75rem;
-}
+  /* line 51, ../scss/_grid.scss */
+  .col-7 {
+    width: 55.83333%;
+    line-height: 1.75rem;
+  }
 
-/* line 54, ../scss/_grid.scss */
-.collapse .col-7 {
-  width: 58.33333%;
-}
+  /* line 57, ../scss/_grid.scss */
+  .collapse .col-7 {
+    width: 58.33333%;
+  }
 
-/* line 48, ../scss/_grid.scss */
-.col-8 {
-  width: 64.16667%;
-  line-height: 1.75rem;
-}
+  /* line 51, ../scss/_grid.scss */
+  .col-8 {
+    width: 64.16667%;
+    line-height: 1.75rem;
+  }
 
-/* line 54, ../scss/_grid.scss */
-.collapse .col-8 {
-  width: 66.66667%;
-}
+  /* line 57, ../scss/_grid.scss */
+  .collapse .col-8 {
+    width: 66.66667%;
+  }
 
-/* line 48, ../scss/_grid.scss */
-.col-9 {
-  width: 72.5%;
-  line-height: 1.8125rem;
-}
+  /* line 51, ../scss/_grid.scss */
+  .col-9 {
+    width: 72.5%;
+    line-height: 1.8125rem;
+  }
 
-/* line 54, ../scss/_grid.scss */
-.collapse .col-9 {
-  width: 75%;
-}
+  /* line 57, ../scss/_grid.scss */
+  .collapse .col-9 {
+    width: 75%;
+  }
 
-/* line 48, ../scss/_grid.scss */
-.col-10 {
-  width: 80.83333%;
-  line-height: 1.875rem;
-}
+  /* line 51, ../scss/_grid.scss */
+  .col-10 {
+    width: 80.83333%;
+    line-height: 1.875rem;
+  }
 
-/* line 54, ../scss/_grid.scss */
-.collapse .col-10 {
-  width: 83.33333%;
-}
+  /* line 57, ../scss/_grid.scss */
+  .collapse .col-10 {
+    width: 83.33333%;
+  }
 
-/* line 48, ../scss/_grid.scss */
-.col-11 {
-  width: 89.16667%;
-  line-height: 1.875rem;
-}
+  /* line 51, ../scss/_grid.scss */
+  .col-11 {
+    width: 89.16667%;
+    line-height: 1.875rem;
+  }
 
-/* line 54, ../scss/_grid.scss */
-.collapse .col-11 {
-  width: 91.66667%;
-}
+  /* line 57, ../scss/_grid.scss */
+  .collapse .col-11 {
+    width: 91.66667%;
+  }
 
-/* line 48, ../scss/_grid.scss */
-.col-12 {
-  width: 97.5%;
-  line-height: 1.9375rem;
-}
+  /* line 51, ../scss/_grid.scss */
+  .col-12 {
+    width: 97.5%;
+    line-height: 1.9375rem;
+  }
 
-/* line 54, ../scss/_grid.scss */
-.collapse .col-12 {
-  width: 100%;
+  /* line 57, ../scss/_grid.scss */
+  .collapse .col-12 {
+    width: 100%;
+  }
 }
-
 /*
 @if ($ie) {
         @include calculate-grid;
@@ -912,89 +987,56 @@ a img {
 }
 
 /* line 29, ../scss/app.scss */
-.show {
-  display: block !important;
-}
-
-/* line 33, ../scss/app.scss */
-.hide {
-  display: none !important;
-}
-
-/* line 37, ../scss/app.scss */
-.hidden {
-  display: none !important;
-  visibility: hidden !important;
-}
-
-/* line 42, ../scss/app.scss */
-.invisible {
-  visibility: hidden;
-}
-
-/* line 46, ../scss/app.scss */
-.screen-reader-text, :root input[type=checkbox], :root input[type=radio] {
-  position: absolute;
-  margin: -1px;
-  padding: 0;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  border: 0;
-}
-
-/* line 57, ../scss/app.scss */
 body {
   color: #333333;
   font-size: 18px;
   font-family: "Open Sans", Verdana, Helvetica, sans-serif;
   font-weight: normal;
   line-height: 28.8px;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* apply a natural box layout model to all elements */
-/* line 67, ../scss/app.scss */
+/* line 39, ../scss/app.scss */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 73, ../scss/app.scss */
+/* line 45, ../scss/app.scss */
 .pagination {
   text-align: center;
 }
-/* line 75, ../scss/app.scss */
+/* line 47, ../scss/app.scss */
 .pagination li {
   display: inline-block;
   margin: 0 18px;
 }
-/* line 79, ../scss/app.scss */
+/* line 51, ../scss/app.scss */
 .pagination .prev:before {
   content: '\25c0';
 }
-/* line 82, ../scss/app.scss */
+/* line 54, ../scss/app.scss */
 .pagination .next:after {
   content: "\25b6";
 }
 
-/* line 87, ../scss/app.scss */
+/* line 59, ../scss/app.scss */
 .read-more {
   display: block;
 }
-/* line 89, ../scss/app.scss */
+/* line 61, ../scss/app.scss */
 .read-more:after {
   content: '\2192';
 }
 
-/* line 94, ../scss/app.scss */
+/* line 66, ../scss/app.scss */
 li {
   list-style: none;
 }
 
-/* line 98, ../scss/app.scss */
+/* line 70, ../scss/app.scss */
 .progress {
   display: block;
   position: relative;
@@ -1002,7 +1044,7 @@ li {
   height: 8px;
   background: #E4E7E7;
 }
-/* line 104, ../scss/app.scss */
+/* line 76, ../scss/app.scss */
 .progress:after {
   content: '';
   display: block;
@@ -1013,22 +1055,22 @@ li {
 }
 
 /* calculate progress bar */
-/* line 121, ../scss/app.scss */
+/* line 93, ../scss/app.scss */
 [data-progress='1']:after {
   width: 25%;
 }
 
-/* line 121, ../scss/app.scss */
+/* line 93, ../scss/app.scss */
 [data-progress='2']:after {
   width: 50%;
 }
 
-/* line 121, ../scss/app.scss */
+/* line 93, ../scss/app.scss */
 [data-progress='3']:after {
   width: 75%;
 }
 
-/* line 121, ../scss/app.scss */
+/* line 93, ../scss/app.scss */
 [data-progress='4']:after {
   width: 100%;
 }
