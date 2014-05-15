@@ -31,6 +31,10 @@ TODO: Let's make this a webapp !
 
 <!--
 TODO: FACEBOOK META TAGS, add option for turning on/off
+
+<meta name="description" content="" /> -same as tag below
+<meta name="keywords" content="" />
+
 <meta name="description" property="og:description" content="My meta description copy." />
 <meta property="og:title" content="Test page" />
 <meta property="og:type" content="article" />

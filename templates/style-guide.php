@@ -91,7 +91,10 @@ if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) echo
 </div>
 
 <div>
-<button class="primary">Primary</button>
+<button class="button primary sm">Primary</button>
+<button class="button primary">Primary</button>
+<button class="button primary md">Primary</button>
+<button class="button primary lg">Primary</button>
 </div>
 
 <div>

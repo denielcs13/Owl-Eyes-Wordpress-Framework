@@ -253,6 +253,21 @@ input[type=button].error:active, input[type=button].error:hover, input[type=butt
   border-color: #285e8e;
 }
 
+/* line 70, ../scss/_buttons.scss */
+.sm {
+  font-size: 60%;
+}
+
+/* line 73, ../scss/_buttons.scss */
+.md {
+  font-size: 120%;
+}
+
+/* line 76, ../scss/_buttons.scss */
+.lg {
+  font-size: 160%;
+}
+
 /* line 5, ../scss/_forms.scss */
 *, *:before, *:after {
   -webkit-appearance: none;
